@@ -3,10 +3,7 @@
         1,
         {
             "category": 1,
-            "new_arrival_ids": [
-                6920405,
-                5881067
-            ],
+            "new_arrival_ids": [],
             "current_page": 0,
             "max_page": 17,
             "max_index": 89,
@@ -6058,5 +6055,5 @@
             ]
         }
     ],
-    "notice_no_check_at": 1688050800
+    "notice_no_check_at": 2019600000
 }

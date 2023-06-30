@@ -1,0 +1,12 @@
+{
+    "member_love_panels": [
+        {
+            "member_id": 8,
+            "member_love_panel_cell_ids": []
+        }
+    ],
+    "weekday_state": {
+        "weekday": 5,
+        "next_weekday_at": 1688137200
+    }
+}

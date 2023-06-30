@@ -1,7 +1,6 @@
 package middleware
 
 import (
-	"fmt"
 	"io"
 	"strings"
 
@@ -18,7 +17,6 @@ func Common(ctx *gin.Context) {
 
 	ep := strings.ReplaceAll(ctx.Request.URL.String(), "/ep3110", "")
 	ctx.Set("ep", ep)
-	fmt.Println(ep)
 
 	ctx.Next()
 }

@@ -6,7 +6,6 @@ import (
 	"elichika/utils"
 	"encoding/base64"
 	"encoding/hex"
-	"fmt"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -61,15 +60,15 @@ func Login(ctx *gin.Context) {
 		}
 		return true
 	})
-	fmt.Println("Request data:", req.String())
-	fmt.Println("Mask:", mask64)
+	// fmt.Println("Request data:", req.String())
+	// fmt.Println("Mask:", mask64)
 
 	mask, err := base64.StdEncoding.DecodeString(mask64)
 	if err != nil {
 		panic(err)
 	}
 	randomBytes := encrypt.RSA_DecryptOAEP(mask, "privatekey.pem")
-	fmt.Println("Random Bytes:", randomBytes)
+	// fmt.Println("Random Bytes:", randomBytes)
 
 	serverEventReceiverKey, err := hex.DecodeString(config.ServerEventReceiverKey)
 	if err != nil {
@@ -89,6 +88,7 @@ func Login(ctx *gin.Context) {
 
 	loginBody := utils.ReadAllText("assets/login.json")
 	loginBody, _ = sjson.Set(loginBody, "session_key", newKey64)
+	loginBody, _ = sjson.Set(loginBody, "user_model.user_status", GetUserStatus())
 	resp := SignResp(ctx.GetString("ep"), loginBody, config.SessionKey)
 
 	ctx.Header("Content-Type", "application/json")
