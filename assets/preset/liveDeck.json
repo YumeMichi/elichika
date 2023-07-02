@@ -1,0 +1,2806 @@
+{
+    "user_live_deck_by_id": [
+        1,
+        {
+            "user_live_deck_id": 1,
+            "name": {
+                "dot_under_text": "ライブ編成1"
+            },
+            "card_master_id_1": 300033001,
+            "card_master_id_2": 100053001,
+            "card_master_id_3": 101033001,
+            "card_master_id_4": 200093001,
+            "card_master_id_5": 401093001,
+            "card_master_id_6": 101083001,
+            "card_master_id_7": 100033001,
+            "card_master_id_8": 101093001,
+            "card_master_id_9": 100073001,
+            "suit_master_id_1": 400033005,
+            "suit_master_id_2": 100053001,
+            "suit_master_id_3": 101033001,
+            "suit_master_id_4": 200093001,
+            "suit_master_id_5": 401093001,
+            "suit_master_id_6": 101083001,
+            "suit_master_id_7": 100033001,
+            "suit_master_id_8": 101093001,
+            "suit_master_id_9": 100073001
+        },
+        2,
+        {
+            "user_live_deck_id": 2,
+            "name": {
+                "dot_under_text": "ライブ編成2"
+            },
+            "card_master_id_1": 300083001,
+            "card_master_id_2": 101033001,
+            "card_master_id_3": 100053001,
+            "card_master_id_4": 301093001,
+            "card_master_id_5": 100033001,
+            "card_master_id_6": 200093001,
+            "card_master_id_7": 101023001,
+            "card_master_id_8": 301063001,
+            "card_master_id_9": 101093001,
+            "suit_master_id_1": 300083001,
+            "suit_master_id_2": 101033001,
+            "suit_master_id_3": 100053001,
+            "suit_master_id_4": 301093001,
+            "suit_master_id_5": 100033001,
+            "suit_master_id_6": 200093001,
+            "suit_master_id_7": 101023001,
+            "suit_master_id_8": 301063001,
+            "suit_master_id_9": 101093001
+        },
+        3,
+        {
+            "user_live_deck_id": 3,
+            "name": {
+                "dot_under_text": "ライブ編成3"
+            },
+            "card_master_id_1": 300033001,
+            "card_master_id_2": 101033001,
+            "card_master_id_3": 100053001,
+            "card_master_id_4": 101063001,
+            "card_master_id_5": 300093001,
+            "card_master_id_6": 101083001,
+            "card_master_id_7": 100073001,
+            "card_master_id_8": 101093001,
+            "card_master_id_9": 100033001,
+            "suit_master_id_1": 400033005,
+            "suit_master_id_2": 101033001,
+            "suit_master_id_3": 100053001,
+            "suit_master_id_4": 101063001,
+            "suit_master_id_5": 300093001,
+            "suit_master_id_6": 101083001,
+            "suit_master_id_7": 100073001,
+            "suit_master_id_8": 101093001,
+            "suit_master_id_9": 100033001
+        },
+        4,
+        {
+            "user_live_deck_id": 4,
+            "name": {
+                "dot_under_text": "ライブ編成4"
+            },
+            "card_master_id_1": 202043001,
+            "card_master_id_2": 101053001,
+            "card_master_id_3": 101033001,
+            "card_master_id_4": 202063001,
+            "card_master_id_5": 401093001,
+            "card_master_id_6": 301093001,
+            "card_master_id_7": 100033001,
+            "card_master_id_8": 300073001,
+            "card_master_id_9": 200093001,
+            "suit_master_id_1": 202043001,
+            "suit_master_id_2": 101053001,
+            "suit_master_id_3": 101033001,
+            "suit_master_id_4": 202063001,
+            "suit_master_id_5": 401093001,
+            "suit_master_id_6": 301093001,
+            "suit_master_id_7": 100033001,
+            "suit_master_id_8": 300073001,
+            "suit_master_id_9": 200093001
+        },
+        5,
+        {
+            "user_live_deck_id": 5,
+            "name": {
+                "dot_under_text": "jbSP特技"
+            },
+            "card_master_id_1": 401073004,
+            "card_master_id_2": 200093001,
+            "card_master_id_3": 101033001,
+            "card_master_id_4": 202063001,
+            "card_master_id_5": 300073001,
+            "card_master_id_6": 100033001,
+            "card_master_id_7": 401093001,
+            "card_master_id_8": 301093001,
+            "card_master_id_9": 100043001,
+            "suit_master_id_1": 401073004,
+            "suit_master_id_2": 200093001,
+            "suit_master_id_3": 101033001,
+            "suit_master_id_4": 202063001,
+            "suit_master_id_5": 300073001,
+            "suit_master_id_6": 100033001,
+            "suit_master_id_7": 401093001,
+            "suit_master_id_8": 301093001,
+            "suit_master_id_9": 100043001
+        },
+        6,
+        {
+            "user_live_deck_id": 6,
+            "name": {
+                "dot_under_text": "ライブ編成6"
+            },
+            "card_master_id_1": 300042001,
+            "card_master_id_2": 101062001,
+            "card_master_id_3": 300083001,
+            "card_master_id_4": 400033004,
+            "card_master_id_5": 300093001,
+            "card_master_id_6": 401033002,
+            "card_master_id_7": 101063001,
+            "card_master_id_8": 301073001,
+            "card_master_id_9": 400083002,
+            "suit_master_id_1": 100041001,
+            "suit_master_id_2": 301063001,
+            "suit_master_id_3": 300083001,
+            "suit_master_id_4": 400033004,
+            "suit_master_id_5": 300093001,
+            "suit_master_id_6": 101031001,
+            "suit_master_id_7": 101063001,
+            "suit_master_id_8": 101071001,
+            "suit_master_id_9": 100081001
+        },
+        7,
+        {
+            "user_live_deck_id": 7,
+            "name": {
+                "dot_under_text": "ライブ編成7"
+            },
+            "card_master_id_1": 100033001,
+            "card_master_id_2": 300033001,
+            "card_master_id_3": 400033001,
+            "card_master_id_4": 400033004,
+            "card_master_id_5": 100032001,
+            "card_master_id_6": 200032001,
+            "card_master_id_7": 400032001,
+            "card_master_id_8": 300032001,
+            "card_master_id_9": 100031001,
+            "suit_master_id_1": 100033001,
+            "suit_master_id_2": 300033001,
+            "suit_master_id_3": 100031001,
+            "suit_master_id_4": 400033004,
+            "suit_master_id_5": 100032001,
+            "suit_master_id_6": 200032001,
+            "suit_master_id_7": 400032001,
+            "suit_master_id_8": 100031001,
+            "suit_master_id_9": 100031001
+        },
+        8,
+        {
+            "user_live_deck_id": 8,
+            "name": {
+                "dot_under_text": "ライブ編成8"
+            },
+            "card_master_id_1": 101093001,
+            "card_master_id_2": 101053001,
+            "card_master_id_3": 402073002,
+            "card_master_id_4": 200093001,
+            "card_master_id_5": 401023003,
+            "card_master_id_6": 100023001,
+            "card_master_id_7": 400093002,
+            "card_master_id_8": 100013001,
+            "card_master_id_9": 401012001,
+            "suit_master_id_1": 101093001,
+            "suit_master_id_2": 101053001,
+            "suit_master_id_3": 102071001,
+            "suit_master_id_4": 200093001,
+            "suit_master_id_5": 101021001,
+            "suit_master_id_6": 100023001,
+            "suit_master_id_7": 400093002,
+            "suit_master_id_8": 100013001,
+            "suit_master_id_9": 401012001
+        },
+        9,
+        {
+            "user_live_deck_id": 9,
+            "name": {
+                "dot_under_text": "ライブ編成9"
+            },
+            "card_master_id_1": 100033001,
+            "card_master_id_2": 300033001,
+            "card_master_id_3": 400033001,
+            "card_master_id_4": 400033004,
+            "card_master_id_5": 400033005,
+            "card_master_id_6": 300032001,
+            "card_master_id_7": 400032001,
+            "card_master_id_8": 200032001,
+            "card_master_id_9": 402042006,
+            "suit_master_id_1": 100033001,
+            "suit_master_id_2": 300033001,
+            "suit_master_id_3": 400033001,
+            "suit_master_id_4": 400033004,
+            "suit_master_id_5": 400033005,
+            "suit_master_id_6": 100031001,
+            "suit_master_id_7": 400032001,
+            "suit_master_id_8": 200032001,
+            "suit_master_id_9": 102041001
+        },
+        10,
+        {
+            "user_live_deck_id": 10,
+            "name": {
+                "dot_under_text": "ライブ編成10"
+            },
+            "card_master_id_1": 100011001,
+            "card_master_id_2": 100021001,
+            "card_master_id_3": 100031001,
+            "card_master_id_4": 100041001,
+            "card_master_id_5": 100051001,
+            "card_master_id_6": 100061001,
+            "card_master_id_7": 100071001,
+            "card_master_id_8": 100081001,
+            "card_master_id_9": 100091001,
+            "suit_master_id_1": 100011001,
+            "suit_master_id_2": 100021001,
+            "suit_master_id_3": 100031001,
+            "suit_master_id_4": 100041001,
+            "suit_master_id_5": 100051001,
+            "suit_master_id_6": 100061001,
+            "suit_master_id_7": 100071001,
+            "suit_master_id_8": 100081001,
+            "suit_master_id_9": 100091001
+        },
+        11,
+        {
+            "user_live_deck_id": 11,
+            "name": {
+                "dot_under_text": "ライブ編成11"
+            },
+            "card_master_id_1": 101011001,
+            "card_master_id_2": 101021001,
+            "card_master_id_3": 101031001,
+            "card_master_id_4": 101041001,
+            "card_master_id_5": 101051001,
+            "card_master_id_6": 101061001,
+            "card_master_id_7": 101071001,
+            "card_master_id_8": 101081001,
+            "card_master_id_9": 101091001,
+            "suit_master_id_1": 101011001,
+            "suit_master_id_2": 101021001,
+            "suit_master_id_3": 101031001,
+            "suit_master_id_4": 101041001,
+            "suit_master_id_5": 101051001,
+            "suit_master_id_6": 101061001,
+            "suit_master_id_7": 101071001,
+            "suit_master_id_8": 101081001,
+            "suit_master_id_9": 101091001
+        },
+        12,
+        {
+            "user_live_deck_id": 12,
+            "name": {
+                "dot_under_text": "ライブ編成12"
+            },
+            "card_master_id_1": 102011001,
+            "card_master_id_2": 102021001,
+            "card_master_id_3": 102031001,
+            "card_master_id_4": 102041001,
+            "card_master_id_5": 102051001,
+            "card_master_id_6": 102061001,
+            "card_master_id_7": 102071001,
+            "card_master_id_8": 102081001,
+            "card_master_id_9": 102091001,
+            "suit_master_id_1": 102011001,
+            "suit_master_id_2": 102021001,
+            "suit_master_id_3": 102031001,
+            "suit_master_id_4": 102041001,
+            "suit_master_id_5": 102051001,
+            "suit_master_id_6": 102061001,
+            "suit_master_id_7": 102071001,
+            "suit_master_id_8": 102081001,
+            "suit_master_id_9": 102091001
+        },
+        13,
+        {
+            "user_live_deck_id": 13,
+            "name": {
+                "dot_under_text": "ライブ編成13"
+            },
+            "card_master_id_1": 100011001,
+            "card_master_id_2": 100021001,
+            "card_master_id_3": 100031001,
+            "card_master_id_4": 100041001,
+            "card_master_id_5": 100051001,
+            "card_master_id_6": 100061001,
+            "card_master_id_7": 100071001,
+            "card_master_id_8": 100081001,
+            "card_master_id_9": 100091001,
+            "suit_master_id_1": 100011001,
+            "suit_master_id_2": 100021001,
+            "suit_master_id_3": 100031001,
+            "suit_master_id_4": 100041001,
+            "suit_master_id_5": 100051001,
+            "suit_master_id_6": 100061001,
+            "suit_master_id_7": 100071001,
+            "suit_master_id_8": 100081001,
+            "suit_master_id_9": 100091001
+        },
+        14,
+        {
+            "user_live_deck_id": 14,
+            "name": {
+                "dot_under_text": "ライブ編成14"
+            },
+            "card_master_id_1": 101011001,
+            "card_master_id_2": 101021001,
+            "card_master_id_3": 101031001,
+            "card_master_id_4": 101041001,
+            "card_master_id_5": 101051001,
+            "card_master_id_6": 101061001,
+            "card_master_id_7": 101071001,
+            "card_master_id_8": 101081001,
+            "card_master_id_9": 101091001,
+            "suit_master_id_1": 101011001,
+            "suit_master_id_2": 101021001,
+            "suit_master_id_3": 101031001,
+            "suit_master_id_4": 101041001,
+            "suit_master_id_5": 101051001,
+            "suit_master_id_6": 101061001,
+            "suit_master_id_7": 101071001,
+            "suit_master_id_8": 101081001,
+            "suit_master_id_9": 101091001
+        },
+        15,
+        {
+            "user_live_deck_id": 15,
+            "name": {
+                "dot_under_text": "ライブ編成15"
+            },
+            "card_master_id_1": 102011001,
+            "card_master_id_2": 102021001,
+            "card_master_id_3": 102031001,
+            "card_master_id_4": 102041001,
+            "card_master_id_5": 102051001,
+            "card_master_id_6": 102061001,
+            "card_master_id_7": 102071001,
+            "card_master_id_8": 102081001,
+            "card_master_id_9": 102091001,
+            "suit_master_id_1": 102011001,
+            "suit_master_id_2": 102021001,
+            "suit_master_id_3": 102031001,
+            "suit_master_id_4": 102041001,
+            "suit_master_id_5": 102051001,
+            "suit_master_id_6": 102061001,
+            "suit_master_id_7": 102071001,
+            "suit_master_id_8": 102081001,
+            "suit_master_id_9": 102091001
+        },
+        16,
+        {
+            "user_live_deck_id": 16,
+            "name": {
+                "dot_under_text": "ライブ編成16"
+            },
+            "card_master_id_1": 100011001,
+            "card_master_id_2": 100021001,
+            "card_master_id_3": 100031001,
+            "card_master_id_4": 100041001,
+            "card_master_id_5": 100051001,
+            "card_master_id_6": 100061001,
+            "card_master_id_7": 100071001,
+            "card_master_id_8": 100081001,
+            "card_master_id_9": 100091001,
+            "suit_master_id_1": 100011001,
+            "suit_master_id_2": 100021001,
+            "suit_master_id_3": 100031001,
+            "suit_master_id_4": 100041001,
+            "suit_master_id_5": 100051001,
+            "suit_master_id_6": 100061001,
+            "suit_master_id_7": 100071001,
+            "suit_master_id_8": 100081001,
+            "suit_master_id_9": 100091001
+        },
+        17,
+        {
+            "user_live_deck_id": 17,
+            "name": {
+                "dot_under_text": "ライブ編成17"
+            },
+            "card_master_id_1": 101011001,
+            "card_master_id_2": 101021001,
+            "card_master_id_3": 101031001,
+            "card_master_id_4": 101041001,
+            "card_master_id_5": 101051001,
+            "card_master_id_6": 101061001,
+            "card_master_id_7": 101071001,
+            "card_master_id_8": 101081001,
+            "card_master_id_9": 101091001,
+            "suit_master_id_1": 101011001,
+            "suit_master_id_2": 101021001,
+            "suit_master_id_3": 101031001,
+            "suit_master_id_4": 101041001,
+            "suit_master_id_5": 101051001,
+            "suit_master_id_6": 101061001,
+            "suit_master_id_7": 101071001,
+            "suit_master_id_8": 101081001,
+            "suit_master_id_9": 101091001
+        },
+        18,
+        {
+            "user_live_deck_id": 18,
+            "name": {
+                "dot_under_text": "ライブ編成18"
+            },
+            "card_master_id_1": 102011001,
+            "card_master_id_2": 102021001,
+            "card_master_id_3": 102031001,
+            "card_master_id_4": 102041001,
+            "card_master_id_5": 102051001,
+            "card_master_id_6": 102061001,
+            "card_master_id_7": 102071001,
+            "card_master_id_8": 102081001,
+            "card_master_id_9": 102091001,
+            "suit_master_id_1": 102011001,
+            "suit_master_id_2": 102021001,
+            "suit_master_id_3": 102031001,
+            "suit_master_id_4": 102041001,
+            "suit_master_id_5": 102051001,
+            "suit_master_id_6": 102061001,
+            "suit_master_id_7": 102071001,
+            "suit_master_id_8": 102081001,
+            "suit_master_id_9": 102091001
+        },
+        19,
+        {
+            "user_live_deck_id": 19,
+            "name": {
+                "dot_under_text": "ライブ編成19"
+            },
+            "card_master_id_1": 401093001,
+            "card_master_id_2": 100053001,
+            "card_master_id_3": 100032001,
+            "card_master_id_4": 101083001,
+            "card_master_id_5": 101033001,
+            "card_master_id_6": 101013001,
+            "card_master_id_7": 100023001,
+            "card_master_id_8": 100063001,
+            "card_master_id_9": 100073001,
+            "suit_master_id_1": 401093001,
+            "suit_master_id_2": 100053001,
+            "suit_master_id_3": 100032001,
+            "suit_master_id_4": 101083001,
+            "suit_master_id_5": 101033001,
+            "suit_master_id_6": 101013001,
+            "suit_master_id_7": 100023001,
+            "suit_master_id_8": 100063001,
+            "suit_master_id_9": 100073001
+        },
+        20,
+        {
+            "user_live_deck_id": 20,
+            "name": {
+                "dot_under_text": "ライブ編成20"
+            },
+            "card_master_id_1": 300083001,
+            "card_master_id_2": 101033001,
+            "card_master_id_3": 200093001,
+            "card_master_id_4": 301093001,
+            "card_master_id_5": 100033001,
+            "card_master_id_6": 300053001,
+            "card_master_id_7": 101023001,
+            "card_master_id_8": 401093001,
+            "card_master_id_9": 101093001,
+            "suit_master_id_1": 300083001,
+            "suit_master_id_2": 101033001,
+            "suit_master_id_3": 200093001,
+            "suit_master_id_4": 301093001,
+            "suit_master_id_5": 100033001,
+            "suit_master_id_6": 100053001,
+            "suit_master_id_7": 101023001,
+            "suit_master_id_8": 401093001,
+            "suit_master_id_9": 101093001
+        },
+        10001,
+        {
+            "user_live_deck_id": 10001,
+            "name": {
+                "dot_under_text": "ライブ編成1"
+            },
+            "card_master_id_1": 300033001,
+            "card_master_id_2": 100053001,
+            "card_master_id_3": 101033001,
+            "card_master_id_4": 200093001,
+            "card_master_id_5": 401093001,
+            "card_master_id_6": 101083001,
+            "card_master_id_7": 100033001,
+            "card_master_id_8": 101093001,
+            "card_master_id_9": 100073001,
+            "suit_master_id_1": 100033001,
+            "suit_master_id_2": 100053001,
+            "suit_master_id_3": 101033001,
+            "suit_master_id_4": 200093001,
+            "suit_master_id_5": 401093001,
+            "suit_master_id_6": 101083001,
+            "suit_master_id_7": 100033001,
+            "suit_master_id_8": 101093001,
+            "suit_master_id_9": 100073001
+        },
+        10002,
+        {
+            "user_live_deck_id": 10002,
+            "name": {
+                "dot_under_text": "ライブ編成2"
+            },
+            "card_master_id_1": 300033001,
+            "card_master_id_2": 101033001,
+            "card_master_id_3": 100053001,
+            "card_master_id_4": 101083001,
+            "card_master_id_5": 100033001,
+            "card_master_id_6": 200093001,
+            "card_master_id_7": 100073001,
+            "card_master_id_8": 101093001,
+            "card_master_id_9": 101053001,
+            "suit_master_id_1": 300033001,
+            "suit_master_id_2": 101033001,
+            "suit_master_id_3": 100053001,
+            "suit_master_id_4": 101083001,
+            "suit_master_id_5": 100033001,
+            "suit_master_id_6": 200093001,
+            "suit_master_id_7": 100073001,
+            "suit_master_id_8": 401093001,
+            "suit_master_id_9": 101053001
+        },
+        10003,
+        {
+            "user_live_deck_id": 10003,
+            "name": {
+                "dot_under_text": "ライブ編成3"
+            },
+            "card_master_id_1": 300033001,
+            "card_master_id_2": 101033001,
+            "card_master_id_3": 100053001,
+            "card_master_id_4": 101063001,
+            "card_master_id_5": 300093001,
+            "card_master_id_6": 101083001,
+            "card_master_id_7": 100073001,
+            "card_master_id_8": 101093001,
+            "card_master_id_9": 100033001,
+            "suit_master_id_1": 100032001,
+            "suit_master_id_2": 101033001,
+            "suit_master_id_3": 100053001,
+            "suit_master_id_4": 101063001,
+            "suit_master_id_5": 300093001,
+            "suit_master_id_6": 101083001,
+            "suit_master_id_7": 100073001,
+            "suit_master_id_8": 101093001,
+            "suit_master_id_9": 100033001
+        },
+        10004,
+        {
+            "user_live_deck_id": 10004,
+            "name": {
+                "dot_under_text": "ライブ編成4"
+            },
+            "card_master_id_1": 100053001,
+            "card_master_id_2": 101033001,
+            "card_master_id_3": 100063001,
+            "card_master_id_4": 100023001,
+            "card_master_id_5": 401093001,
+            "card_master_id_6": 101063001,
+            "card_master_id_7": 101083001,
+            "card_master_id_8": 100073001,
+            "card_master_id_9": 101013001,
+            "suit_master_id_1": 100053001,
+            "suit_master_id_2": 101033001,
+            "suit_master_id_3": 100063001,
+            "suit_master_id_4": 100023001,
+            "suit_master_id_5": 401093001,
+            "suit_master_id_6": 101063001,
+            "suit_master_id_7": 101083001,
+            "suit_master_id_8": 100073001,
+            "suit_master_id_9": 101013001
+        },
+        10005,
+        {
+            "user_live_deck_id": 10005,
+            "name": {
+                "dot_under_text": "ライブ編成5"
+            },
+            "card_master_id_1": 300093001,
+            "card_master_id_2": 101033001,
+            "card_master_id_3": 100053001,
+            "card_master_id_4": 101013001,
+            "card_master_id_5": 100032001,
+            "card_master_id_6": 301072001,
+            "card_master_id_7": 401012001,
+            "card_master_id_8": 401082001,
+            "card_master_id_9": 401092001,
+            "suit_master_id_1": 300093001,
+            "suit_master_id_2": 101033001,
+            "suit_master_id_3": 100053001,
+            "suit_master_id_4": 101013001,
+            "suit_master_id_5": 100032001,
+            "suit_master_id_6": 301072001,
+            "suit_master_id_7": 401012001,
+            "suit_master_id_8": 101081001,
+            "suit_master_id_9": 401092001
+        },
+        10006,
+        {
+            "user_live_deck_id": 10006,
+            "name": {
+                "dot_under_text": "ライブ編成6"
+            },
+            "card_master_id_1": 101033001,
+            "card_master_id_2": 301063001,
+            "card_master_id_3": 101063001,
+            "card_master_id_4": 101083001,
+            "card_master_id_5": 401093001,
+            "card_master_id_6": 101013001,
+            "card_master_id_7": 401073001,
+            "card_master_id_8": 101023001,
+            "card_master_id_9": 301043001,
+            "suit_master_id_1": 101033001,
+            "suit_master_id_2": 301063001,
+            "suit_master_id_3": 101063001,
+            "suit_master_id_4": 101083001,
+            "suit_master_id_5": 401093001,
+            "suit_master_id_6": 101013001,
+            "suit_master_id_7": 401073001,
+            "suit_master_id_8": 101023001,
+            "suit_master_id_9": 301043001
+        },
+        10007,
+        {
+            "user_live_deck_id": 10007,
+            "name": {
+                "dot_under_text": "ライブ編成7"
+            },
+            "card_master_id_1": 100011001,
+            "card_master_id_2": 100021001,
+            "card_master_id_3": 100031001,
+            "card_master_id_4": 100041001,
+            "card_master_id_5": 100051001,
+            "card_master_id_6": 100061001,
+            "card_master_id_7": 100071001,
+            "card_master_id_8": 100081001,
+            "card_master_id_9": 100091001,
+            "suit_master_id_1": 100011001,
+            "suit_master_id_2": 100021001,
+            "suit_master_id_3": 100031001,
+            "suit_master_id_4": 100041001,
+            "suit_master_id_5": 100051001,
+            "suit_master_id_6": 100061001,
+            "suit_master_id_7": 100071001,
+            "suit_master_id_8": 100081001,
+            "suit_master_id_9": 100091001
+        },
+        10008,
+        {
+            "user_live_deck_id": 10008,
+            "name": {
+                "dot_under_text": "ライブ編成8"
+            },
+            "card_master_id_1": 101011001,
+            "card_master_id_2": 101021001,
+            "card_master_id_3": 101031001,
+            "card_master_id_4": 101041001,
+            "card_master_id_5": 101051001,
+            "card_master_id_6": 101061001,
+            "card_master_id_7": 101071001,
+            "card_master_id_8": 101081001,
+            "card_master_id_9": 101091001,
+            "suit_master_id_1": 101011001,
+            "suit_master_id_2": 101021001,
+            "suit_master_id_3": 101031001,
+            "suit_master_id_4": 101041001,
+            "suit_master_id_5": 101051001,
+            "suit_master_id_6": 101061001,
+            "suit_master_id_7": 101071001,
+            "suit_master_id_8": 101081001,
+            "suit_master_id_9": 101091001
+        },
+        10009,
+        {
+            "user_live_deck_id": 10009,
+            "name": {
+                "dot_under_text": "ライブ編成9"
+            },
+            "card_master_id_1": 102011001,
+            "card_master_id_2": 102021001,
+            "card_master_id_3": 102031001,
+            "card_master_id_4": 102041001,
+            "card_master_id_5": 102051001,
+            "card_master_id_6": 102061001,
+            "card_master_id_7": 102071001,
+            "card_master_id_8": 102081001,
+            "card_master_id_9": 102091001,
+            "suit_master_id_1": 102011001,
+            "suit_master_id_2": 102021001,
+            "suit_master_id_3": 102031001,
+            "suit_master_id_4": 102041001,
+            "suit_master_id_5": 102051001,
+            "suit_master_id_6": 102061001,
+            "suit_master_id_7": 102071001,
+            "suit_master_id_8": 102081001,
+            "suit_master_id_9": 102091001
+        },
+        10010,
+        {
+            "user_live_deck_id": 10010,
+            "name": {
+                "dot_under_text": "ライブ編成10"
+            },
+            "card_master_id_1": 100011001,
+            "card_master_id_2": 100021001,
+            "card_master_id_3": 100031001,
+            "card_master_id_4": 100041001,
+            "card_master_id_5": 100051001,
+            "card_master_id_6": 100061001,
+            "card_master_id_7": 100071001,
+            "card_master_id_8": 100081001,
+            "card_master_id_9": 100091001,
+            "suit_master_id_1": 100011001,
+            "suit_master_id_2": 100021001,
+            "suit_master_id_3": 100031001,
+            "suit_master_id_4": 100041001,
+            "suit_master_id_5": 100051001,
+            "suit_master_id_6": 100061001,
+            "suit_master_id_7": 100071001,
+            "suit_master_id_8": 100081001,
+            "suit_master_id_9": 100091001
+        },
+        10011,
+        {
+            "user_live_deck_id": 10011,
+            "name": {
+                "dot_under_text": "ライブ編成11"
+            },
+            "card_master_id_1": 101011001,
+            "card_master_id_2": 101021001,
+            "card_master_id_3": 101031001,
+            "card_master_id_4": 101041001,
+            "card_master_id_5": 101051001,
+            "card_master_id_6": 101061001,
+            "card_master_id_7": 101071001,
+            "card_master_id_8": 101081001,
+            "card_master_id_9": 101091001,
+            "suit_master_id_1": 101011001,
+            "suit_master_id_2": 101021001,
+            "suit_master_id_3": 101031001,
+            "suit_master_id_4": 101041001,
+            "suit_master_id_5": 101051001,
+            "suit_master_id_6": 101061001,
+            "suit_master_id_7": 101071001,
+            "suit_master_id_8": 101081001,
+            "suit_master_id_9": 101091001
+        },
+        10012,
+        {
+            "user_live_deck_id": 10012,
+            "name": {
+                "dot_under_text": "ライブ編成12"
+            },
+            "card_master_id_1": 102011001,
+            "card_master_id_2": 102021001,
+            "card_master_id_3": 102031001,
+            "card_master_id_4": 102041001,
+            "card_master_id_5": 102051001,
+            "card_master_id_6": 102061001,
+            "card_master_id_7": 102071001,
+            "card_master_id_8": 102081001,
+            "card_master_id_9": 102091001,
+            "suit_master_id_1": 102011001,
+            "suit_master_id_2": 102021001,
+            "suit_master_id_3": 102031001,
+            "suit_master_id_4": 102041001,
+            "suit_master_id_5": 102051001,
+            "suit_master_id_6": 102061001,
+            "suit_master_id_7": 102071001,
+            "suit_master_id_8": 102081001,
+            "suit_master_id_9": 102091001
+        },
+        10013,
+        {
+            "user_live_deck_id": 10013,
+            "name": {
+                "dot_under_text": "ライブ編成13"
+            },
+            "card_master_id_1": 100011001,
+            "card_master_id_2": 100021001,
+            "card_master_id_3": 100031001,
+            "card_master_id_4": 100041001,
+            "card_master_id_5": 100051001,
+            "card_master_id_6": 100061001,
+            "card_master_id_7": 100071001,
+            "card_master_id_8": 100081001,
+            "card_master_id_9": 100091001,
+            "suit_master_id_1": 100011001,
+            "suit_master_id_2": 100021001,
+            "suit_master_id_3": 100031001,
+            "suit_master_id_4": 100041001,
+            "suit_master_id_5": 100051001,
+            "suit_master_id_6": 100061001,
+            "suit_master_id_7": 100071001,
+            "suit_master_id_8": 100081001,
+            "suit_master_id_9": 100091001
+        },
+        10014,
+        {
+            "user_live_deck_id": 10014,
+            "name": {
+                "dot_under_text": "ライブ編成14"
+            },
+            "card_master_id_1": 101011001,
+            "card_master_id_2": 101021001,
+            "card_master_id_3": 101031001,
+            "card_master_id_4": 101041001,
+            "card_master_id_5": 101051001,
+            "card_master_id_6": 101061001,
+            "card_master_id_7": 101071001,
+            "card_master_id_8": 101081001,
+            "card_master_id_9": 101091001,
+            "suit_master_id_1": 101011001,
+            "suit_master_id_2": 101021001,
+            "suit_master_id_3": 101031001,
+            "suit_master_id_4": 101041001,
+            "suit_master_id_5": 101051001,
+            "suit_master_id_6": 101061001,
+            "suit_master_id_7": 101071001,
+            "suit_master_id_8": 101081001,
+            "suit_master_id_9": 101091001
+        },
+        10015,
+        {
+            "user_live_deck_id": 10015,
+            "name": {
+                "dot_under_text": "ライブ編成15"
+            },
+            "card_master_id_1": 102011001,
+            "card_master_id_2": 102021001,
+            "card_master_id_3": 102031001,
+            "card_master_id_4": 102041001,
+            "card_master_id_5": 102051001,
+            "card_master_id_6": 102061001,
+            "card_master_id_7": 102071001,
+            "card_master_id_8": 102081001,
+            "card_master_id_9": 102091001,
+            "suit_master_id_1": 102011001,
+            "suit_master_id_2": 102021001,
+            "suit_master_id_3": 102031001,
+            "suit_master_id_4": 102041001,
+            "suit_master_id_5": 102051001,
+            "suit_master_id_6": 102061001,
+            "suit_master_id_7": 102071001,
+            "suit_master_id_8": 102081001,
+            "suit_master_id_9": 102091001
+        },
+        10016,
+        {
+            "user_live_deck_id": 10016,
+            "name": {
+                "dot_under_text": "ライブ編成16"
+            },
+            "card_master_id_1": 100011001,
+            "card_master_id_2": 100021001,
+            "card_master_id_3": 100031001,
+            "card_master_id_4": 100041001,
+            "card_master_id_5": 100051001,
+            "card_master_id_6": 100061001,
+            "card_master_id_7": 100071001,
+            "card_master_id_8": 100081001,
+            "card_master_id_9": 100091001,
+            "suit_master_id_1": 100011001,
+            "suit_master_id_2": 100021001,
+            "suit_master_id_3": 100031001,
+            "suit_master_id_4": 100041001,
+            "suit_master_id_5": 100051001,
+            "suit_master_id_6": 100061001,
+            "suit_master_id_7": 100071001,
+            "suit_master_id_8": 100081001,
+            "suit_master_id_9": 100091001
+        },
+        10017,
+        {
+            "user_live_deck_id": 10017,
+            "name": {
+                "dot_under_text": "ライブ編成17"
+            },
+            "card_master_id_1": 101011001,
+            "card_master_id_2": 101021001,
+            "card_master_id_3": 101031001,
+            "card_master_id_4": 101041001,
+            "card_master_id_5": 101051001,
+            "card_master_id_6": 101061001,
+            "card_master_id_7": 101071001,
+            "card_master_id_8": 101081001,
+            "card_master_id_9": 101091001,
+            "suit_master_id_1": 101011001,
+            "suit_master_id_2": 101021001,
+            "suit_master_id_3": 101031001,
+            "suit_master_id_4": 101041001,
+            "suit_master_id_5": 101051001,
+            "suit_master_id_6": 101061001,
+            "suit_master_id_7": 101071001,
+            "suit_master_id_8": 101081001,
+            "suit_master_id_9": 101091001
+        },
+        10018,
+        {
+            "user_live_deck_id": 10018,
+            "name": {
+                "dot_under_text": "ライブ編成18"
+            },
+            "card_master_id_1": 102011001,
+            "card_master_id_2": 102021001,
+            "card_master_id_3": 102031001,
+            "card_master_id_4": 102041001,
+            "card_master_id_5": 102051001,
+            "card_master_id_6": 102061001,
+            "card_master_id_7": 102071001,
+            "card_master_id_8": 102081001,
+            "card_master_id_9": 102091001,
+            "suit_master_id_1": 102011001,
+            "suit_master_id_2": 102021001,
+            "suit_master_id_3": 102031001,
+            "suit_master_id_4": 102041001,
+            "suit_master_id_5": 102051001,
+            "suit_master_id_6": 102061001,
+            "suit_master_id_7": 102071001,
+            "suit_master_id_8": 102081001,
+            "suit_master_id_9": 102091001
+        },
+        10019,
+        {
+            "user_live_deck_id": 10019,
+            "name": {
+                "dot_under_text": "ライブ編成19"
+            },
+            "card_master_id_1": 401093001,
+            "card_master_id_2": 100053001,
+            "card_master_id_3": 100032001,
+            "card_master_id_4": 101083001,
+            "card_master_id_5": 101033001,
+            "card_master_id_6": 101013001,
+            "card_master_id_7": 100023001,
+            "card_master_id_8": 100063001,
+            "card_master_id_9": 100073001,
+            "suit_master_id_1": 401093001,
+            "suit_master_id_2": 100053001,
+            "suit_master_id_3": 100032001,
+            "suit_master_id_4": 101083001,
+            "suit_master_id_5": 101033001,
+            "suit_master_id_6": 101013001,
+            "suit_master_id_7": 100023001,
+            "suit_master_id_8": 100063001,
+            "suit_master_id_9": 100073001
+        },
+        10020,
+        {
+            "user_live_deck_id": 10020,
+            "name": {
+                "dot_under_text": "ライブ編成20"
+            },
+            "card_master_id_1": 100033001,
+            "card_master_id_2": 400052001,
+            "card_master_id_3": 402023001,
+            "card_master_id_4": 401012002,
+            "card_master_id_5": 402032002,
+            "card_master_id_6": 402092001,
+            "card_master_id_7": 400022001,
+            "card_master_id_8": 400093001,
+            "card_master_id_9": 402032001,
+            "suit_master_id_1": 100032001,
+            "suit_master_id_2": 100051001,
+            "suit_master_id_3": 402023001,
+            "suit_master_id_4": 101011001,
+            "suit_master_id_5": 102031001,
+            "suit_master_id_6": 102091001,
+            "suit_master_id_7": 100021001,
+            "suit_master_id_8": 100091001,
+            "suit_master_id_9": 102031001
+        }
+    ],
+    "user_live_party_by_id": [
+        101,
+        {
+            "party_id": 101,
+            "user_live_deck_id": 1,
+            "name": {
+                "dot_under_text": "ボルテージ増"
+            },
+            "icon_master_id": 40,
+            "card_master_id_1": 100053001,
+            "card_master_id_2": 200093001,
+            "card_master_id_3": 101033001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        102,
+        {
+            "party_id": 102,
+            "user_live_deck_id": 1,
+            "name": {
+                "dot_under_text": "ボルテージ増★3"
+            },
+            "icon_master_id": 40,
+            "card_master_id_1": 401093001,
+            "card_master_id_2": 101083001,
+            "card_master_id_3": 100033001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        103,
+        {
+            "party_id": 103,
+            "user_live_deck_id": 1,
+            "name": {
+                "dot_under_text": "特技発動率増★3"
+            },
+            "icon_master_id": 43,
+            "card_master_id_1": 300033001,
+            "card_master_id_2": 101093001,
+            "card_master_id_3": 100073001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        201,
+        {
+            "party_id": 201,
+            "user_live_deck_id": 2,
+            "name": {
+                "dot_under_text": "ボルテージ増★2＆SPゲージ増"
+            },
+            "icon_master_id": 40,
+            "card_master_id_1": 100053001,
+            "card_master_id_2": 101033001,
+            "card_master_id_3": 300083001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        202,
+        {
+            "party_id": 202,
+            "user_live_deck_id": 2,
+            "name": {
+                "dot_under_text": "ダメージ減★2＆特技発動率増"
+            },
+            "icon_master_id": 42,
+            "card_master_id_1": 200093001,
+            "card_master_id_2": 301063001,
+            "card_master_id_3": 101093001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        203,
+        {
+            "party_id": 203,
+            "user_live_deck_id": 2,
+            "name": {
+                "dot_under_text": "ボルテージ増"
+            },
+            "icon_master_id": 40,
+            "card_master_id_1": 100033001,
+            "card_master_id_2": 101023001,
+            "card_master_id_3": 301093001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        301,
+        {
+            "party_id": 301,
+            "user_live_deck_id": 3,
+            "name": {
+                "dot_under_text": "SPゲージ増★2"
+            },
+            "icon_master_id": 41,
+            "card_master_id_1": 101063001,
+            "card_master_id_2": 100053001,
+            "card_master_id_3": 300093001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        302,
+        {
+            "party_id": 302,
+            "user_live_deck_id": 3,
+            "name": {
+                "dot_under_text": "特技発動率増★2"
+            },
+            "icon_master_id": 43,
+            "card_master_id_1": 100073001,
+            "card_master_id_2": 101093001,
+            "card_master_id_3": 101033001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        303,
+        {
+            "party_id": 303,
+            "user_live_deck_id": 3,
+            "name": {
+                "dot_under_text": "ボルテージ増＆特技発動率増"
+            },
+            "icon_master_id": 44,
+            "card_master_id_1": 300033001,
+            "card_master_id_2": 100033001,
+            "card_master_id_3": 101083001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        401,
+        {
+            "party_id": 401,
+            "user_live_deck_id": 4,
+            "name": {
+                "dot_under_text": "ボルテージ増"
+            },
+            "icon_master_id": 40,
+            "card_master_id_1": 101053001,
+            "card_master_id_2": 202043001,
+            "card_master_id_3": 101033001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        402,
+        {
+            "party_id": 402,
+            "user_live_deck_id": 4,
+            "name": {
+                "dot_under_text": "ボルテージ増"
+            },
+            "icon_master_id": 40,
+            "card_master_id_1": 200093001,
+            "card_master_id_2": 401093001,
+            "card_master_id_3": 301093001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        403,
+        {
+            "party_id": 403,
+            "user_live_deck_id": 4,
+            "name": {
+                "dot_under_text": "ボルテージ増★3"
+            },
+            "icon_master_id": 40,
+            "card_master_id_1": 202063001,
+            "card_master_id_2": 100033001,
+            "card_master_id_3": 300073001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        501,
+        {
+            "party_id": 501,
+            "user_live_deck_id": 5,
+            "name": {
+                "dot_under_text": "ボルテージ増"
+            },
+            "icon_master_id": 40,
+            "card_master_id_1": 100043001,
+            "card_master_id_2": 401073004,
+            "card_master_id_3": 200093001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        502,
+        {
+            "party_id": 502,
+            "user_live_deck_id": 5,
+            "name": {
+                "dot_under_text": "ボルテージ増★3"
+            },
+            "icon_master_id": 40,
+            "card_master_id_1": 300073001,
+            "card_master_id_2": 101033001,
+            "card_master_id_3": 202063001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        503,
+        {
+            "party_id": 503,
+            "user_live_deck_id": 5,
+            "name": {
+                "dot_under_text": "ボルテージ増★2＆SPゲージ増"
+            },
+            "icon_master_id": 40,
+            "card_master_id_1": 100033001,
+            "card_master_id_2": 401093001,
+            "card_master_id_3": 301093001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        601,
+        {
+            "party_id": 601,
+            "user_live_deck_id": 6,
+            "name": {
+                "dot_under_text": "SPゲージ増★2"
+            },
+            "icon_master_id": 41,
+            "card_master_id_1": 400083002,
+            "card_master_id_2": 101063001,
+            "card_master_id_3": 400033004,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        602,
+        {
+            "party_id": 602,
+            "user_live_deck_id": 6,
+            "name": {
+                "dot_under_text": "特技発動率増★2"
+            },
+            "icon_master_id": 43,
+            "card_master_id_1": 300042001,
+            "card_master_id_2": 101062001,
+            "card_master_id_3": 300083001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        603,
+        {
+            "party_id": 603,
+            "user_live_deck_id": 6,
+            "name": {
+                "dot_under_text": "特技発動率増★3"
+            },
+            "icon_master_id": 43,
+            "card_master_id_1": 301073001,
+            "card_master_id_2": 300093001,
+            "card_master_id_3": 401033002,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        701,
+        {
+            "party_id": 701,
+            "user_live_deck_id": 7,
+            "name": {
+                "dot_under_text": "特技発動率増"
+            },
+            "icon_master_id": 43,
+            "card_master_id_1": 100033001,
+            "card_master_id_2": 300033001,
+            "card_master_id_3": 400033001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        702,
+        {
+            "party_id": 702,
+            "user_live_deck_id": 7,
+            "name": {
+                "dot_under_text": "特技発動率増"
+            },
+            "icon_master_id": 43,
+            "card_master_id_1": 400033004,
+            "card_master_id_2": 100032001,
+            "card_master_id_3": 200032001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        703,
+        {
+            "party_id": 703,
+            "user_live_deck_id": 7,
+            "name": {
+                "dot_under_text": "SPゲージ増★2"
+            },
+            "icon_master_id": 41,
+            "card_master_id_1": 400032001,
+            "card_master_id_2": 300032001,
+            "card_master_id_3": 100031001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        801,
+        {
+            "party_id": 801,
+            "user_live_deck_id": 8,
+            "name": {
+                "dot_under_text": "ダメージ減★3"
+            },
+            "icon_master_id": 42,
+            "card_master_id_1": 101053001,
+            "card_master_id_2": 200093001,
+            "card_master_id_3": 100023001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        802,
+        {
+            "party_id": 802,
+            "user_live_deck_id": 8,
+            "name": {
+                "dot_under_text": "特技発動率増★3"
+            },
+            "icon_master_id": 43,
+            "card_master_id_1": 101093001,
+            "card_master_id_2": 401023003,
+            "card_master_id_3": 402073002,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        803,
+        {
+            "party_id": 803,
+            "user_live_deck_id": 8,
+            "name": {
+                "dot_under_text": "ダメージ減★3"
+            },
+            "icon_master_id": 42,
+            "card_master_id_1": 401012001,
+            "card_master_id_2": 100013001,
+            "card_master_id_3": 400093002,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        901,
+        {
+            "party_id": 901,
+            "user_live_deck_id": 9,
+            "name": {
+                "dot_under_text": "特技発動率増"
+            },
+            "icon_master_id": 43,
+            "card_master_id_1": 100033001,
+            "card_master_id_2": 300033001,
+            "card_master_id_3": 400033001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        902,
+        {
+            "party_id": 902,
+            "user_live_deck_id": 9,
+            "name": {
+                "dot_under_text": "特技発動率増★3"
+            },
+            "icon_master_id": 43,
+            "card_master_id_1": 400033004,
+            "card_master_id_2": 400033005,
+            "card_master_id_3": 300032001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        903,
+        {
+            "party_id": 903,
+            "user_live_deck_id": 9,
+            "name": {
+                "dot_under_text": "ボルテージ増"
+            },
+            "icon_master_id": 40,
+            "card_master_id_1": 400032001,
+            "card_master_id_2": 200032001,
+            "card_master_id_3": 402042006,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1001,
+        {
+            "party_id": 1001,
+            "user_live_deck_id": 10,
+            "name": {
+                "dot_under_text": "SPゲージ増★2＆ボルテージ増"
+            },
+            "icon_master_id": 41,
+            "card_master_id_1": 100011001,
+            "card_master_id_2": 100021001,
+            "card_master_id_3": 100031001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1002,
+        {
+            "party_id": 1002,
+            "user_live_deck_id": 10,
+            "name": {
+                "dot_under_text": "特技発動率増"
+            },
+            "icon_master_id": 43,
+            "card_master_id_1": 100041001,
+            "card_master_id_2": 100051001,
+            "card_master_id_3": 100061001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1003,
+        {
+            "party_id": 1003,
+            "user_live_deck_id": 10,
+            "name": {
+                "dot_under_text": "ダメージ減"
+            },
+            "icon_master_id": 42,
+            "card_master_id_1": 100071001,
+            "card_master_id_2": 100081001,
+            "card_master_id_3": 100091001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1101,
+        {
+            "party_id": 1101,
+            "user_live_deck_id": 11,
+            "name": {
+                "dot_under_text": "SPゲージ増＆特技発動率増"
+            },
+            "icon_master_id": 44,
+            "card_master_id_1": 101011001,
+            "card_master_id_2": 101021001,
+            "card_master_id_3": 101031001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1102,
+        {
+            "party_id": 1102,
+            "user_live_deck_id": 11,
+            "name": {
+                "dot_under_text": "ボルテージ増★3"
+            },
+            "icon_master_id": 40,
+            "card_master_id_1": 101041001,
+            "card_master_id_2": 101051001,
+            "card_master_id_3": 101061001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1103,
+        {
+            "party_id": 1103,
+            "user_live_deck_id": 11,
+            "name": {
+                "dot_under_text": "ダメージ減★2"
+            },
+            "icon_master_id": 42,
+            "card_master_id_1": 101071001,
+            "card_master_id_2": 101081001,
+            "card_master_id_3": 101091001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1201,
+        {
+            "party_id": 1201,
+            "user_live_deck_id": 12,
+            "name": {
+                "dot_under_text": "SPゲージ増"
+            },
+            "icon_master_id": 41,
+            "card_master_id_1": 102011001,
+            "card_master_id_2": 102021001,
+            "card_master_id_3": 102031001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1202,
+        {
+            "party_id": 1202,
+            "user_live_deck_id": 12,
+            "name": {
+                "dot_under_text": "ボルテージ増＆特技発動率増"
+            },
+            "icon_master_id": 44,
+            "card_master_id_1": 102041001,
+            "card_master_id_2": 102051001,
+            "card_master_id_3": 102061001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1203,
+        {
+            "party_id": 1203,
+            "user_live_deck_id": 12,
+            "name": {
+                "dot_under_text": "ダメージ減★2"
+            },
+            "icon_master_id": 42,
+            "card_master_id_1": 102071001,
+            "card_master_id_2": 102081001,
+            "card_master_id_3": 102091001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1301,
+        {
+            "party_id": 1301,
+            "user_live_deck_id": 13,
+            "name": {
+                "dot_under_text": "SPゲージ増★2＆ボルテージ増"
+            },
+            "icon_master_id": 41,
+            "card_master_id_1": 100011001,
+            "card_master_id_2": 100021001,
+            "card_master_id_3": 100031001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1302,
+        {
+            "party_id": 1302,
+            "user_live_deck_id": 13,
+            "name": {
+                "dot_under_text": "特技発動率増"
+            },
+            "icon_master_id": 43,
+            "card_master_id_1": 100041001,
+            "card_master_id_2": 100051001,
+            "card_master_id_3": 100061001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1303,
+        {
+            "party_id": 1303,
+            "user_live_deck_id": 13,
+            "name": {
+                "dot_under_text": "ダメージ減"
+            },
+            "icon_master_id": 42,
+            "card_master_id_1": 100071001,
+            "card_master_id_2": 100081001,
+            "card_master_id_3": 100091001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1401,
+        {
+            "party_id": 1401,
+            "user_live_deck_id": 14,
+            "name": {
+                "dot_under_text": "SPゲージ増＆特技発動率増"
+            },
+            "icon_master_id": 44,
+            "card_master_id_1": 101011001,
+            "card_master_id_2": 101021001,
+            "card_master_id_3": 101031001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1402,
+        {
+            "party_id": 1402,
+            "user_live_deck_id": 14,
+            "name": {
+                "dot_under_text": "ボルテージ増★3"
+            },
+            "icon_master_id": 40,
+            "card_master_id_1": 101041001,
+            "card_master_id_2": 101051001,
+            "card_master_id_3": 101061001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1403,
+        {
+            "party_id": 1403,
+            "user_live_deck_id": 14,
+            "name": {
+                "dot_under_text": "ダメージ減★2"
+            },
+            "icon_master_id": 42,
+            "card_master_id_1": 101071001,
+            "card_master_id_2": 101081001,
+            "card_master_id_3": 101091001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1501,
+        {
+            "party_id": 1501,
+            "user_live_deck_id": 15,
+            "name": {
+                "dot_under_text": "SPゲージ増"
+            },
+            "icon_master_id": 41,
+            "card_master_id_1": 102011001,
+            "card_master_id_2": 102021001,
+            "card_master_id_3": 102031001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1502,
+        {
+            "party_id": 1502,
+            "user_live_deck_id": 15,
+            "name": {
+                "dot_under_text": "ボルテージ増＆特技発動率増"
+            },
+            "icon_master_id": 44,
+            "card_master_id_1": 102041001,
+            "card_master_id_2": 102051001,
+            "card_master_id_3": 102061001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1503,
+        {
+            "party_id": 1503,
+            "user_live_deck_id": 15,
+            "name": {
+                "dot_under_text": "ダメージ減★2"
+            },
+            "icon_master_id": 42,
+            "card_master_id_1": 102071001,
+            "card_master_id_2": 102081001,
+            "card_master_id_3": 102091001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1601,
+        {
+            "party_id": 1601,
+            "user_live_deck_id": 16,
+            "name": {
+                "dot_under_text": "SPゲージ増★2＆ボルテージ増"
+            },
+            "icon_master_id": 41,
+            "card_master_id_1": 100011001,
+            "card_master_id_2": 100021001,
+            "card_master_id_3": 100031001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1602,
+        {
+            "party_id": 1602,
+            "user_live_deck_id": 16,
+            "name": {
+                "dot_under_text": "特技発動率増"
+            },
+            "icon_master_id": 43,
+            "card_master_id_1": 100041001,
+            "card_master_id_2": 100051001,
+            "card_master_id_3": 100061001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1603,
+        {
+            "party_id": 1603,
+            "user_live_deck_id": 16,
+            "name": {
+                "dot_under_text": "ダメージ減"
+            },
+            "icon_master_id": 42,
+            "card_master_id_1": 100071001,
+            "card_master_id_2": 100081001,
+            "card_master_id_3": 100091001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1701,
+        {
+            "party_id": 1701,
+            "user_live_deck_id": 17,
+            "name": {
+                "dot_under_text": "SPゲージ増＆特技発動率増"
+            },
+            "icon_master_id": 44,
+            "card_master_id_1": 101011001,
+            "card_master_id_2": 101021001,
+            "card_master_id_3": 101031001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1702,
+        {
+            "party_id": 1702,
+            "user_live_deck_id": 17,
+            "name": {
+                "dot_under_text": "ボルテージ増★3"
+            },
+            "icon_master_id": 40,
+            "card_master_id_1": 101041001,
+            "card_master_id_2": 101051001,
+            "card_master_id_3": 101061001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1703,
+        {
+            "party_id": 1703,
+            "user_live_deck_id": 17,
+            "name": {
+                "dot_under_text": "ダメージ減★2"
+            },
+            "icon_master_id": 42,
+            "card_master_id_1": 101071001,
+            "card_master_id_2": 101081001,
+            "card_master_id_3": 101091001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1801,
+        {
+            "party_id": 1801,
+            "user_live_deck_id": 18,
+            "name": {
+                "dot_under_text": "SPゲージ増"
+            },
+            "icon_master_id": 41,
+            "card_master_id_1": 102011001,
+            "card_master_id_2": 102021001,
+            "card_master_id_3": 102031001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1802,
+        {
+            "party_id": 1802,
+            "user_live_deck_id": 18,
+            "name": {
+                "dot_under_text": "ボルテージ増＆特技発動率増"
+            },
+            "icon_master_id": 44,
+            "card_master_id_1": 102041001,
+            "card_master_id_2": 102051001,
+            "card_master_id_3": 102061001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1803,
+        {
+            "party_id": 1803,
+            "user_live_deck_id": 18,
+            "name": {
+                "dot_under_text": "ダメージ減★2"
+            },
+            "icon_master_id": 42,
+            "card_master_id_1": 102071001,
+            "card_master_id_2": 102081001,
+            "card_master_id_3": 102091001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1901,
+        {
+            "party_id": 1901,
+            "user_live_deck_id": 19,
+            "name": {
+                "dot_under_text": "ボルテージ増"
+            },
+            "icon_master_id": 40,
+            "card_master_id_1": 100053001,
+            "card_master_id_2": 101033001,
+            "card_master_id_3": 100023001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1902,
+        {
+            "party_id": 1902,
+            "user_live_deck_id": 19,
+            "name": {
+                "dot_under_text": "特技発動率増★2"
+            },
+            "icon_master_id": 43,
+            "card_master_id_1": 101083001,
+            "card_master_id_2": 100063001,
+            "card_master_id_3": 101013001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1903,
+        {
+            "party_id": 1903,
+            "user_live_deck_id": 19,
+            "name": {
+                "dot_under_text": "特技発動率増"
+            },
+            "icon_master_id": 43,
+            "card_master_id_1": 100073001,
+            "card_master_id_2": 401093001,
+            "card_master_id_3": 100032001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        2001,
+        {
+            "party_id": 2001,
+            "user_live_deck_id": 20,
+            "name": {
+                "dot_under_text": "ボルテージ増★2"
+            },
+            "icon_master_id": 40,
+            "card_master_id_1": 101033001,
+            "card_master_id_2": 300083001,
+            "card_master_id_3": 200093001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        2002,
+        {
+            "party_id": 2002,
+            "user_live_deck_id": 20,
+            "name": {
+                "dot_under_text": "ボルテージ増＆特技発動率増"
+            },
+            "icon_master_id": 44,
+            "card_master_id_1": 300053001,
+            "card_master_id_2": 101093001,
+            "card_master_id_3": 401093001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        2003,
+        {
+            "party_id": 2003,
+            "user_live_deck_id": 20,
+            "name": {
+                "dot_under_text": "ボルテージ増"
+            },
+            "icon_master_id": 40,
+            "card_master_id_1": 100033001,
+            "card_master_id_2": 101023001,
+            "card_master_id_3": 301093001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1000101,
+        {
+            "party_id": 1000101,
+            "user_live_deck_id": 10001,
+            "name": {
+                "dot_under_text": "ボルテージ増"
+            },
+            "icon_master_id": 40,
+            "card_master_id_1": 100053001,
+            "card_master_id_2": 101033001,
+            "card_master_id_3": 200093001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1000102,
+        {
+            "party_id": 1000102,
+            "user_live_deck_id": 10001,
+            "name": {
+                "dot_under_text": "ボルテージ増＆特技発動率増"
+            },
+            "icon_master_id": 44,
+            "card_master_id_1": 100073001,
+            "card_master_id_2": 101083001,
+            "card_master_id_3": 100033001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1000103,
+        {
+            "party_id": 1000103,
+            "user_live_deck_id": 10001,
+            "name": {
+                "dot_under_text": "特技発動率増★2"
+            },
+            "icon_master_id": 43,
+            "card_master_id_1": 300033001,
+            "card_master_id_2": 101093001,
+            "card_master_id_3": 401093001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1000201,
+        {
+            "party_id": 1000201,
+            "user_live_deck_id": 10002,
+            "name": {
+                "dot_under_text": "SPゲージ増"
+            },
+            "icon_master_id": 41,
+            "card_master_id_1": 100053001,
+            "card_master_id_2": 101033001,
+            "card_master_id_3": 300033001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1000202,
+        {
+            "party_id": 1000202,
+            "user_live_deck_id": 10002,
+            "name": {
+                "dot_under_text": "ダメージ減★2＆特技発動率増"
+            },
+            "icon_master_id": 42,
+            "card_master_id_1": 200093001,
+            "card_master_id_2": 101053001,
+            "card_master_id_3": 101093001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1000203,
+        {
+            "party_id": 1000203,
+            "user_live_deck_id": 10002,
+            "name": {
+                "dot_under_text": "ボルテージ増＆特技発動率増"
+            },
+            "icon_master_id": 44,
+            "card_master_id_1": 100033001,
+            "card_master_id_2": 100073001,
+            "card_master_id_3": 101083001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1000301,
+        {
+            "party_id": 1000301,
+            "user_live_deck_id": 10003,
+            "name": {
+                "dot_under_text": "SPゲージ増★2"
+            },
+            "icon_master_id": 41,
+            "card_master_id_1": 101063001,
+            "card_master_id_2": 100053001,
+            "card_master_id_3": 300093001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1000302,
+        {
+            "party_id": 1000302,
+            "user_live_deck_id": 10003,
+            "name": {
+                "dot_under_text": "特技発動率増★2"
+            },
+            "icon_master_id": 43,
+            "card_master_id_1": 100073001,
+            "card_master_id_2": 101093001,
+            "card_master_id_3": 101033001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1000303,
+        {
+            "party_id": 1000303,
+            "user_live_deck_id": 10003,
+            "name": {
+                "dot_under_text": "ボルテージ増＆特技発動率増"
+            },
+            "icon_master_id": 44,
+            "card_master_id_1": 300033001,
+            "card_master_id_2": 100033001,
+            "card_master_id_3": 101083001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1000401,
+        {
+            "party_id": 1000401,
+            "user_live_deck_id": 10004,
+            "name": {
+                "dot_under_text": "SPゲージ増＆ダメージ減"
+            },
+            "icon_master_id": 44,
+            "card_master_id_1": 100053001,
+            "card_master_id_2": 101063001,
+            "card_master_id_3": 100023001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1000402,
+        {
+            "party_id": 1000402,
+            "user_live_deck_id": 10004,
+            "name": {
+                "dot_under_text": "ボルテージ増＆特技発動率増"
+            },
+            "icon_master_id": 44,
+            "card_master_id_1": 101033001,
+            "card_master_id_2": 401093001,
+            "card_master_id_3": 100073001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1000403,
+        {
+            "party_id": 1000403,
+            "user_live_deck_id": 10004,
+            "name": {
+                "dot_under_text": "特技発動率増★2"
+            },
+            "icon_master_id": 43,
+            "card_master_id_1": 100063001,
+            "card_master_id_2": 101083001,
+            "card_master_id_3": 101013001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1000501,
+        {
+            "party_id": 1000501,
+            "user_live_deck_id": 10005,
+            "name": {
+                "dot_under_text": "SPゲージ増"
+            },
+            "icon_master_id": 41,
+            "card_master_id_1": 300093001,
+            "card_master_id_2": 101033001,
+            "card_master_id_3": 100053001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1000502,
+        {
+            "party_id": 1000502,
+            "user_live_deck_id": 10005,
+            "name": {
+                "dot_under_text": "ダメージ減★3"
+            },
+            "icon_master_id": 42,
+            "card_master_id_1": 401012001,
+            "card_master_id_2": 401082001,
+            "card_master_id_3": 401092001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1000503,
+        {
+            "party_id": 1000503,
+            "user_live_deck_id": 10005,
+            "name": {
+                "dot_under_text": "ダメージ減★2＆特技発動率増"
+            },
+            "icon_master_id": 42,
+            "card_master_id_1": 101013001,
+            "card_master_id_2": 100032001,
+            "card_master_id_3": 301072001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1000601,
+        {
+            "party_id": 1000601,
+            "user_live_deck_id": 10006,
+            "name": {
+                "dot_under_text": "ボルテージ増★2"
+            },
+            "icon_master_id": 40,
+            "card_master_id_1": 101033001,
+            "card_master_id_2": 301063001,
+            "card_master_id_3": 101083001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1000602,
+        {
+            "party_id": 1000602,
+            "user_live_deck_id": 10006,
+            "name": {
+                "dot_under_text": "ボルテージ増★2＆SPゲージ増"
+            },
+            "icon_master_id": 40,
+            "card_master_id_1": 301043001,
+            "card_master_id_2": 401093001,
+            "card_master_id_3": 401073001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1000603,
+        {
+            "party_id": 1000603,
+            "user_live_deck_id": 10006,
+            "name": {
+                "dot_under_text": "ダメージ減"
+            },
+            "icon_master_id": 42,
+            "card_master_id_1": 101023001,
+            "card_master_id_2": 101063001,
+            "card_master_id_3": 101013001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1000701,
+        {
+            "party_id": 1000701,
+            "user_live_deck_id": 10007,
+            "name": {
+                "dot_under_text": "SPゲージ増★2＆ボルテージ増"
+            },
+            "icon_master_id": 41,
+            "card_master_id_1": 100011001,
+            "card_master_id_2": 100021001,
+            "card_master_id_3": 100031001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1000702,
+        {
+            "party_id": 1000702,
+            "user_live_deck_id": 10007,
+            "name": {
+                "dot_under_text": "特技発動率増"
+            },
+            "icon_master_id": 43,
+            "card_master_id_1": 100041001,
+            "card_master_id_2": 100051001,
+            "card_master_id_3": 100061001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1000703,
+        {
+            "party_id": 1000703,
+            "user_live_deck_id": 10007,
+            "name": {
+                "dot_under_text": "ダメージ減"
+            },
+            "icon_master_id": 42,
+            "card_master_id_1": 100071001,
+            "card_master_id_2": 100081001,
+            "card_master_id_3": 100091001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1000801,
+        {
+            "party_id": 1000801,
+            "user_live_deck_id": 10008,
+            "name": {
+                "dot_under_text": "SPゲージ増＆特技発動率増"
+            },
+            "icon_master_id": 44,
+            "card_master_id_1": 101011001,
+            "card_master_id_2": 101021001,
+            "card_master_id_3": 101031001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1000802,
+        {
+            "party_id": 1000802,
+            "user_live_deck_id": 10008,
+            "name": {
+                "dot_under_text": "ボルテージ増★3"
+            },
+            "icon_master_id": 40,
+            "card_master_id_1": 101041001,
+            "card_master_id_2": 101051001,
+            "card_master_id_3": 101061001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1000803,
+        {
+            "party_id": 1000803,
+            "user_live_deck_id": 10008,
+            "name": {
+                "dot_under_text": "ダメージ減★2"
+            },
+            "icon_master_id": 42,
+            "card_master_id_1": 101071001,
+            "card_master_id_2": 101081001,
+            "card_master_id_3": 101091001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1000901,
+        {
+            "party_id": 1000901,
+            "user_live_deck_id": 10009,
+            "name": {
+                "dot_under_text": "SPゲージ増"
+            },
+            "icon_master_id": 41,
+            "card_master_id_1": 102011001,
+            "card_master_id_2": 102021001,
+            "card_master_id_3": 102031001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1000902,
+        {
+            "party_id": 1000902,
+            "user_live_deck_id": 10009,
+            "name": {
+                "dot_under_text": "ボルテージ増＆特技発動率増"
+            },
+            "icon_master_id": 44,
+            "card_master_id_1": 102041001,
+            "card_master_id_2": 102051001,
+            "card_master_id_3": 102061001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1000903,
+        {
+            "party_id": 1000903,
+            "user_live_deck_id": 10009,
+            "name": {
+                "dot_under_text": "ダメージ減★2"
+            },
+            "icon_master_id": 42,
+            "card_master_id_1": 102071001,
+            "card_master_id_2": 102081001,
+            "card_master_id_3": 102091001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1001001,
+        {
+            "party_id": 1001001,
+            "user_live_deck_id": 10010,
+            "name": {
+                "dot_under_text": "SPゲージ増★2＆ボルテージ増"
+            },
+            "icon_master_id": 41,
+            "card_master_id_1": 100011001,
+            "card_master_id_2": 100021001,
+            "card_master_id_3": 100031001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1001002,
+        {
+            "party_id": 1001002,
+            "user_live_deck_id": 10010,
+            "name": {
+                "dot_under_text": "特技発動率増"
+            },
+            "icon_master_id": 43,
+            "card_master_id_1": 100041001,
+            "card_master_id_2": 100051001,
+            "card_master_id_3": 100061001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1001003,
+        {
+            "party_id": 1001003,
+            "user_live_deck_id": 10010,
+            "name": {
+                "dot_under_text": "ダメージ減"
+            },
+            "icon_master_id": 42,
+            "card_master_id_1": 100071001,
+            "card_master_id_2": 100081001,
+            "card_master_id_3": 100091001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1001101,
+        {
+            "party_id": 1001101,
+            "user_live_deck_id": 10011,
+            "name": {
+                "dot_under_text": "SPゲージ増＆特技発動率増"
+            },
+            "icon_master_id": 44,
+            "card_master_id_1": 101011001,
+            "card_master_id_2": 101021001,
+            "card_master_id_3": 101031001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1001102,
+        {
+            "party_id": 1001102,
+            "user_live_deck_id": 10011,
+            "name": {
+                "dot_under_text": "ボルテージ増★3"
+            },
+            "icon_master_id": 40,
+            "card_master_id_1": 101041001,
+            "card_master_id_2": 101051001,
+            "card_master_id_3": 101061001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1001103,
+        {
+            "party_id": 1001103,
+            "user_live_deck_id": 10011,
+            "name": {
+                "dot_under_text": "ダメージ減★2"
+            },
+            "icon_master_id": 42,
+            "card_master_id_1": 101071001,
+            "card_master_id_2": 101081001,
+            "card_master_id_3": 101091001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1001201,
+        {
+            "party_id": 1001201,
+            "user_live_deck_id": 10012,
+            "name": {
+                "dot_under_text": "SPゲージ増"
+            },
+            "icon_master_id": 41,
+            "card_master_id_1": 102011001,
+            "card_master_id_2": 102021001,
+            "card_master_id_3": 102031001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1001202,
+        {
+            "party_id": 1001202,
+            "user_live_deck_id": 10012,
+            "name": {
+                "dot_under_text": "ボルテージ増＆特技発動率増"
+            },
+            "icon_master_id": 44,
+            "card_master_id_1": 102041001,
+            "card_master_id_2": 102051001,
+            "card_master_id_3": 102061001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1001203,
+        {
+            "party_id": 1001203,
+            "user_live_deck_id": 10012,
+            "name": {
+                "dot_under_text": "ダメージ減★2"
+            },
+            "icon_master_id": 42,
+            "card_master_id_1": 102071001,
+            "card_master_id_2": 102081001,
+            "card_master_id_3": 102091001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1001301,
+        {
+            "party_id": 1001301,
+            "user_live_deck_id": 10013,
+            "name": {
+                "dot_under_text": "SPゲージ増★2＆ボルテージ増"
+            },
+            "icon_master_id": 41,
+            "card_master_id_1": 100011001,
+            "card_master_id_2": 100021001,
+            "card_master_id_3": 100031001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1001302,
+        {
+            "party_id": 1001302,
+            "user_live_deck_id": 10013,
+            "name": {
+                "dot_under_text": "特技発動率増"
+            },
+            "icon_master_id": 43,
+            "card_master_id_1": 100041001,
+            "card_master_id_2": 100051001,
+            "card_master_id_3": 100061001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1001303,
+        {
+            "party_id": 1001303,
+            "user_live_deck_id": 10013,
+            "name": {
+                "dot_under_text": "ダメージ減"
+            },
+            "icon_master_id": 42,
+            "card_master_id_1": 100071001,
+            "card_master_id_2": 100081001,
+            "card_master_id_3": 100091001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1001401,
+        {
+            "party_id": 1001401,
+            "user_live_deck_id": 10014,
+            "name": {
+                "dot_under_text": "SPゲージ増＆特技発動率増"
+            },
+            "icon_master_id": 44,
+            "card_master_id_1": 101011001,
+            "card_master_id_2": 101021001,
+            "card_master_id_3": 101031001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1001402,
+        {
+            "party_id": 1001402,
+            "user_live_deck_id": 10014,
+            "name": {
+                "dot_under_text": "ボルテージ増★3"
+            },
+            "icon_master_id": 40,
+            "card_master_id_1": 101041001,
+            "card_master_id_2": 101051001,
+            "card_master_id_3": 101061001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1001403,
+        {
+            "party_id": 1001403,
+            "user_live_deck_id": 10014,
+            "name": {
+                "dot_under_text": "ダメージ減★2"
+            },
+            "icon_master_id": 42,
+            "card_master_id_1": 101071001,
+            "card_master_id_2": 101081001,
+            "card_master_id_3": 101091001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1001501,
+        {
+            "party_id": 1001501,
+            "user_live_deck_id": 10015,
+            "name": {
+                "dot_under_text": "SPゲージ増"
+            },
+            "icon_master_id": 41,
+            "card_master_id_1": 102011001,
+            "card_master_id_2": 102021001,
+            "card_master_id_3": 102031001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1001502,
+        {
+            "party_id": 1001502,
+            "user_live_deck_id": 10015,
+            "name": {
+                "dot_under_text": "ボルテージ増＆特技発動率増"
+            },
+            "icon_master_id": 44,
+            "card_master_id_1": 102041001,
+            "card_master_id_2": 102051001,
+            "card_master_id_3": 102061001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1001503,
+        {
+            "party_id": 1001503,
+            "user_live_deck_id": 10015,
+            "name": {
+                "dot_under_text": "ダメージ減★2"
+            },
+            "icon_master_id": 42,
+            "card_master_id_1": 102071001,
+            "card_master_id_2": 102081001,
+            "card_master_id_3": 102091001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1001601,
+        {
+            "party_id": 1001601,
+            "user_live_deck_id": 10016,
+            "name": {
+                "dot_under_text": "SPゲージ増★2＆ボルテージ増"
+            },
+            "icon_master_id": 41,
+            "card_master_id_1": 100011001,
+            "card_master_id_2": 100021001,
+            "card_master_id_3": 100031001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1001602,
+        {
+            "party_id": 1001602,
+            "user_live_deck_id": 10016,
+            "name": {
+                "dot_under_text": "特技発動率増"
+            },
+            "icon_master_id": 43,
+            "card_master_id_1": 100041001,
+            "card_master_id_2": 100051001,
+            "card_master_id_3": 100061001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1001603,
+        {
+            "party_id": 1001603,
+            "user_live_deck_id": 10016,
+            "name": {
+                "dot_under_text": "ダメージ減"
+            },
+            "icon_master_id": 42,
+            "card_master_id_1": 100071001,
+            "card_master_id_2": 100081001,
+            "card_master_id_3": 100091001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1001701,
+        {
+            "party_id": 1001701,
+            "user_live_deck_id": 10017,
+            "name": {
+                "dot_under_text": "SPゲージ増＆特技発動率増"
+            },
+            "icon_master_id": 44,
+            "card_master_id_1": 101011001,
+            "card_master_id_2": 101021001,
+            "card_master_id_3": 101031001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1001702,
+        {
+            "party_id": 1001702,
+            "user_live_deck_id": 10017,
+            "name": {
+                "dot_under_text": "ボルテージ増★3"
+            },
+            "icon_master_id": 40,
+            "card_master_id_1": 101041001,
+            "card_master_id_2": 101051001,
+            "card_master_id_3": 101061001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1001703,
+        {
+            "party_id": 1001703,
+            "user_live_deck_id": 10017,
+            "name": {
+                "dot_under_text": "ダメージ減★2"
+            },
+            "icon_master_id": 42,
+            "card_master_id_1": 101071001,
+            "card_master_id_2": 101081001,
+            "card_master_id_3": 101091001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1001801,
+        {
+            "party_id": 1001801,
+            "user_live_deck_id": 10018,
+            "name": {
+                "dot_under_text": "SPゲージ増"
+            },
+            "icon_master_id": 41,
+            "card_master_id_1": 102011001,
+            "card_master_id_2": 102021001,
+            "card_master_id_3": 102031001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1001802,
+        {
+            "party_id": 1001802,
+            "user_live_deck_id": 10018,
+            "name": {
+                "dot_under_text": "ボルテージ増＆特技発動率増"
+            },
+            "icon_master_id": 44,
+            "card_master_id_1": 102041001,
+            "card_master_id_2": 102051001,
+            "card_master_id_3": 102061001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1001803,
+        {
+            "party_id": 1001803,
+            "user_live_deck_id": 10018,
+            "name": {
+                "dot_under_text": "ダメージ減★2"
+            },
+            "icon_master_id": 42,
+            "card_master_id_1": 102071001,
+            "card_master_id_2": 102081001,
+            "card_master_id_3": 102091001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1001901,
+        {
+            "party_id": 1001901,
+            "user_live_deck_id": 10019,
+            "name": {
+                "dot_under_text": "ボルテージ増"
+            },
+            "icon_master_id": 40,
+            "card_master_id_1": 100053001,
+            "card_master_id_2": 101033001,
+            "card_master_id_3": 100023001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1001902,
+        {
+            "party_id": 1001902,
+            "user_live_deck_id": 10019,
+            "name": {
+                "dot_under_text": "特技発動率増★2"
+            },
+            "icon_master_id": 43,
+            "card_master_id_1": 101083001,
+            "card_master_id_2": 100063001,
+            "card_master_id_3": 101013001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1001903,
+        {
+            "party_id": 1001903,
+            "user_live_deck_id": 10019,
+            "name": {
+                "dot_under_text": "特技発動率増"
+            },
+            "icon_master_id": 43,
+            "card_master_id_1": 100073001,
+            "card_master_id_2": 401093001,
+            "card_master_id_3": 100032001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1002001,
+        {
+            "party_id": 1002001,
+            "user_live_deck_id": 10020,
+            "name": {
+                "dot_under_text": "ボルテージ増★2"
+            },
+            "icon_master_id": 40,
+            "card_master_id_1": 402032002,
+            "card_master_id_2": 400052001,
+            "card_master_id_3": 402023001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1002002,
+        {
+            "party_id": 1002002,
+            "user_live_deck_id": 10020,
+            "name": {
+                "dot_under_text": "SPゲージ増"
+            },
+            "icon_master_id": 41,
+            "card_master_id_1": 401012002,
+            "card_master_id_2": 100033001,
+            "card_master_id_3": 402092001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        },
+        1002003,
+        {
+            "party_id": 1002003,
+            "user_live_deck_id": 10020,
+            "name": {
+                "dot_under_text": "ボルテージ増"
+            },
+            "icon_master_id": 40,
+            "card_master_id_1": 400022001,
+            "card_master_id_2": 400093001,
+            "card_master_id_3": 402032001,
+            "user_accessory_id_1": null,
+            "user_accessory_id_2": null,
+            "user_accessory_id_3": null
+        }
+    ]
+}

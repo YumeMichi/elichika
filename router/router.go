@@ -20,6 +20,7 @@ func Router(r *gin.Engine) {
 		api.POST("/communicationMember/finishUserStoryMember", handler.FinishUserStoryMember)
 		api.POST("/communicationMember/finishUserStorySide", handler.FinishUserStorySide)
 		api.POST("/communicationMember/setTheme", handler.SetTheme)
+		api.POST("/communicationMember/setFavoriteMember", handler.SetFavoriteMember)
 		api.POST("/communicationMember/updateUserCommunicationMemberDetailBadge", handler.UpdateUserCommunicationMemberDetailBadge)
 		api.POST("/communicationMember/updateUserLiveDifficultyNewFlag", handler.UpdateUserLiveDifficultyNewFlag)
 		api.POST("/emblem/activateEmblem", handler.ActivateEmblem)
@@ -42,5 +43,6 @@ func Router(r *gin.Engine) {
 		api.POST("/story/finishUserStoryMain", handler.FinishStoryMain)
 		api.POST("/terms/agreement", handler.Agreement)
 		api.POST("/userProfile/fetchProfile", handler.FetchProfile)
+		api.POST("/userProfile/setProfile", handler.SetProfile)
 	}
 }

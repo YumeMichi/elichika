@@ -3,7 +3,6 @@ package handler
 import (
 	"elichika/config"
 	"elichika/model"
-	"elichika/utils"
 	"encoding/json"
 	"net/http"
 
@@ -13,7 +12,7 @@ import (
 )
 
 func UpdateCardNewFlag(ctx *gin.Context) {
-	signBody, _ := sjson.Set(utils.ReadAllText("assets/updateCardNewFlag.json"),
+	signBody, _ := sjson.Set(GetUserData("updateCardNewFlag.json"),
 		"user_model_diff.user_status", GetUserStatus())
 	resp := SignResp(ctx.GetString("ep"), signBody, config.SessionKey)
 
@@ -30,8 +29,9 @@ func ChangeIsAwakeningImage(ctx *gin.Context) {
 		panic(err)
 	}
 
+	loginData := GetUserData("login.json")
 	cardInfo := model.CardInfo{}
-	gjson.Parse(utils.ReadAllText("assets/login.json")).Get("user_model.user_card_by_card_id").
+	gjson.Parse(loginData).Get("user_model.user_card_by_card_id").
 		ForEach(func(key, value gjson.Result) bool {
 			if value.IsObject() {
 				if err := json.Unmarshal([]byte(value.String()), &cardInfo); err != nil {
@@ -40,6 +40,9 @@ func ChangeIsAwakeningImage(ctx *gin.Context) {
 
 				if cardInfo.CardMasterID == req.CardMasterID {
 					cardInfo.IsAwakeningImage = req.IsAwakeningImage
+
+					k := "user_model.user_card_by_card_id." + key.String() + ".is_awakening_image"
+					SetUserData("login.json", k, req.IsAwakeningImage)
 
 					return false
 				}
@@ -51,7 +54,7 @@ func ChangeIsAwakeningImage(ctx *gin.Context) {
 	userCardInfo = append(userCardInfo, cardInfo.CardMasterID)
 	userCardInfo = append(userCardInfo, cardInfo)
 
-	cardResp := utils.ReadAllText("assets/changeIsAwakeningImage.json")
+	cardResp := GetUserData("changeIsAwakeningImage.json")
 	cardResp, _ = sjson.Set(cardResp, "user_model_diff.user_status", GetUserStatus())
 	cardResp, _ = sjson.Set(cardResp, "user_model_diff.user_card_by_card_id", userCardInfo)
 	resp := SignResp(ctx.GetString("ep"), cardResp, config.SessionKey)

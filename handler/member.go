@@ -3,7 +3,6 @@ package handler
 import (
 	"elichika/config"
 	"elichika/model"
-	"elichika/utils"
 	"net/http"
 	"time"
 
@@ -35,7 +34,7 @@ func FetchCommunicationMemberDetail(ctx *gin.Context) {
 	tomorrow := time.Date(year, month, day+1, 0, 0, 0, 0, now.Location()).Unix()
 	weekday := int(now.Weekday())
 
-	signBody := utils.ReadAllText("assets/fetchCommunicationMemberDetail.json")
+	signBody := GetUserData("fetchCommunicationMemberDetail.json")
 	signBody, _ = sjson.Set(signBody, "member_love_panels.0.member_id", memberId)
 	signBody, _ = sjson.Set(signBody, "member_love_panels.0.member_love_panel_cell_ids", lovePanelCellIds)
 	signBody, _ = sjson.Set(signBody, "weekday_state.weekday", weekday)
@@ -63,7 +62,7 @@ func UpdateUserCommunicationMemberDetailBadge(ctx *gin.Context) {
 		MemberMasterID: int(memberMasterId),
 	})
 
-	signBody := utils.ReadAllText("assets/updateUserCommunicationMemberDetailBadge.json")
+	signBody := GetUserData("updateUserCommunicationMemberDetailBadge.json")
 	signBody, _ = sjson.Set(signBody, "user_model.user_status", GetUserStatus())
 	signBody, _ = sjson.Set(signBody, "user_model.user_communication_member_detail_badge_by_id", userDetail)
 	resp := SignResp(ctx.GetString("ep"), signBody, config.SessionKey)
@@ -73,7 +72,7 @@ func UpdateUserCommunicationMemberDetailBadge(ctx *gin.Context) {
 }
 
 func UpdateUserLiveDifficultyNewFlag(ctx *gin.Context) {
-	signBody, _ := sjson.Set(utils.ReadAllText("assets/updateUserLiveDifficultyNewFlag.json"),
+	signBody, _ := sjson.Set(GetUserData("updateUserLiveDifficultyNewFlag.json"),
 		"user_model.user_status", GetUserStatus())
 	resp := SignResp(ctx.GetString("ep"), signBody, config.SessionKey)
 
@@ -82,7 +81,7 @@ func UpdateUserLiveDifficultyNewFlag(ctx *gin.Context) {
 }
 
 func FinishUserStorySide(ctx *gin.Context) {
-	signBody, _ := sjson.Set(utils.ReadAllText("assets/finishUserStorySide.json"),
+	signBody, _ := sjson.Set(GetUserData("finishUserStorySide.json"),
 		"user_model.user_status", GetUserStatus())
 	resp := SignResp(ctx.GetString("ep"), signBody, config.SessionKey)
 
@@ -91,7 +90,7 @@ func FinishUserStorySide(ctx *gin.Context) {
 }
 
 func FinishUserStoryMember(ctx *gin.Context) {
-	signBody, _ := sjson.Set(utils.ReadAllText("assets/finishUserStoryMember.json"),
+	signBody, _ := sjson.Set(GetUserData("finishUserStoryMember.json"),
 		"user_model.user_status", GetUserStatus())
 	resp := SignResp(ctx.GetString("ep"), signBody, config.SessionKey)
 
@@ -101,12 +100,28 @@ func FinishUserStoryMember(ctx *gin.Context) {
 
 func SetTheme(ctx *gin.Context) {
 	reqBody := ctx.GetString("reqBody")
+	// fmt.Println(reqBody)
+
 	var memberMasterId, suitMasterId, backgroundMasterId int64
 	gjson.Parse(reqBody).ForEach(func(key, value gjson.Result) bool {
 		if value.Get("member_master_id").String() != "" {
 			memberMasterId = value.Get("member_master_id").Int()
 			suitMasterId = value.Get("suit_master_id").Int()
 			backgroundMasterId = value.Get("custom_background_master_id").Int()
+
+			gjson.Parse(GetUserData("memberSettings.json")).Get("user_member_by_member_id").
+				ForEach(func(kk, vv gjson.Result) bool {
+					if vv.IsObject() {
+						if vv.Get("member_master_id").Int() == memberMasterId {
+							SetUserData("memberSettings.json", "user_member_by_member_id."+
+								kk.String()+".custom_background_master_id", backgroundMasterId)
+							SetUserData("memberSettings.json", "user_member_by_member_id."+
+								kk.String()+".suit_master_id", suitMasterId)
+							return false
+						}
+					}
+					return true
+				})
 			return false
 		}
 		return true
@@ -132,10 +147,23 @@ func SetTheme(ctx *gin.Context) {
 		IsNew:        false,
 	})
 
-	signBody := utils.ReadAllText("assets/setTheme.json")
+	signBody := GetUserData("setTheme.json")
 	signBody, _ = sjson.Set(signBody, "user_model.user_status", GetUserStatus())
 	signBody, _ = sjson.Set(signBody, "user_model.user_member_by_member_id", userMemberRes)
 	signBody, _ = sjson.Set(signBody, "user_model.user_suit_by_suit_id", userSuitRes)
+	resp := SignResp(ctx.GetString("ep"), signBody, config.SessionKey)
+
+	ctx.Header("Content-Type", "application/json")
+	ctx.String(http.StatusOK, resp)
+}
+
+func SetFavoriteMember(ctx *gin.Context) {
+	reqBody := ctx.GetString("reqBody")
+
+	SetUserData("userStatus.json", "favorite_member_id",
+		gjson.Parse(reqBody).Array()[0].Get("member_master_id").Int())
+	signBody, _ := sjson.Set(GetUserData("setFavoriteMember.json"),
+		"user_model.user_status", GetUserStatus())
 	resp := SignResp(ctx.GetString("ep"), signBody, config.SessionKey)
 
 	ctx.Header("Content-Type", "application/json")

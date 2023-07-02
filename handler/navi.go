@@ -2,7 +2,6 @@ package handler
 
 import (
 	"elichika/config"
-	"elichika/utils"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -10,7 +9,7 @@ import (
 )
 
 func SaveUserNaviVoice(ctx *gin.Context) {
-	signBody, _ := sjson.Set(utils.ReadAllText("assets/saveUserNaviVoice.json"),
+	signBody, _ := sjson.Set(GetUserData("saveUserNaviVoice.json"),
 		"user_model.user_status", GetUserStatus())
 	resp := SignResp(ctx.GetString("ep"), signBody, config.SessionKey)
 

@@ -8,11 +8,15 @@ import (
 	"fmt"
 	"time"
 
+	"github.com/tidwall/sjson"
 	"xorm.io/xorm"
 )
 
 var (
 	MainEng *xorm.Engine
+
+	presetDataPath = "assets/preset/"
+	userDataPath   = "assets/userdata/"
 )
 
 func init() {
@@ -35,9 +39,36 @@ func SignResp(ep, body, key string) (resp string) {
 }
 
 func GetUserStatus() map[string]any {
+	userData := GetUserData("userStatus.json")
 	var r map[string]any
-	if err := json.Unmarshal([]byte(utils.ReadAllText("assets/userStatus.json")), &r); err != nil {
+	if err := json.Unmarshal([]byte(userData), &r); err != nil {
 		panic(err)
 	}
 	return r
+}
+
+func GetUserData(fileName string) string {
+	userDataFile := userDataPath + fileName
+	if utils.PathExists(userDataFile) {
+		return utils.ReadAllText(userDataFile)
+	}
+
+	presetDataFile := presetDataPath + fileName
+	if !utils.PathExists(presetDataFile) {
+		panic("File not exists")
+	}
+
+	userData := utils.ReadAllText(presetDataFile)
+	utils.WriteAllText(userDataFile, userData)
+
+	return userData
+}
+
+func SetUserData(fileName, key string, value any) string {
+	userData, err := sjson.Set(GetUserData(fileName), key, value)
+	CheckErr(err)
+
+	utils.WriteAllText(userDataPath+fileName, userData)
+
+	return userData
 }

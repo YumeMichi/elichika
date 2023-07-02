@@ -4,11 +4,7 @@
 package utils
 
 import (
-	"encoding/hex"
-	"math/rand"
 	"os"
-	"strings"
-	"time"
 )
 
 func PathExists(path string) bool {
@@ -35,29 +31,4 @@ func Xor(s1, s2 []byte) (res []byte) {
 	}
 
 	return
-}
-
-// EncryptDecrypt runs a XOR encryption on the input string, encrypting it if it hasn't already been,
-// and decrypting it if it has, using the key provided.
-func EncryptDecrypt(input, key string) string {
-	kL := len(key)
-
-	var tmp []string
-	for i := 0; i < len(input); i++ {
-		tmp = append(tmp, string(input[i]^key[i%kL]))
-	}
-	return strings.Join(tmp, "")
-}
-
-func Sub16(str []byte) []byte {
-	return str[16:]
-}
-
-func RandomStr(len int) string {
-	rand.Seed(time.Now().UnixNano())
-	mRand := make([]byte, len)
-	rand.Read(mRand)
-	mRandStr := hex.EncodeToString(mRand)[0:len]
-
-	return mRandStr
 }

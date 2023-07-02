@@ -39,7 +39,7 @@ func StartUp(ctx *gin.Context) {
 	newKey64 := base64.StdEncoding.EncodeToString(newKey)
 	// fmt.Println("Session Key:", newKey64)
 
-	startupBody := utils.ReadAllText("assets/startup.json")
+	startupBody := GetUserData("startup.json")
 	startupBody, _ = sjson.Set(startupBody, "authorization_key", newKey64)
 	resp := SignResp(ctx.GetString("ep"), startupBody, config.StartUpKey)
 	// fmt.Println("Response:", resp)
@@ -86,9 +86,19 @@ func Login(ctx *gin.Context) {
 	newKey64 := base64.StdEncoding.EncodeToString(newKey)
 	// fmt.Println("Session Key:", newKey64)
 
-	loginBody := utils.ReadAllText("assets/login.json")
+	loginBody := GetUserData("login.json")
 	loginBody, _ = sjson.Set(loginBody, "session_key", newKey64)
 	loginBody, _ = sjson.Set(loginBody, "user_model.user_status", GetUserStatus())
+
+	/* ======== UserData ======== */
+	liveDeckData := gjson.Parse(GetUserData("liveDeck.json"))
+	loginBody, _ = sjson.Set(loginBody, "user_model.user_live_deck_by_id", liveDeckData.Get("user_live_deck_by_id").Value())
+	loginBody, _ = sjson.Set(loginBody, "user_model.user_live_party_by_id", liveDeckData.Get("user_live_party_by_id").Value())
+
+	memberData := gjson.Parse(GetUserData("memberSettings.json"))
+	loginBody, _ = sjson.Set(loginBody, "user_model.user_member_by_member_id", memberData.Get("user_member_by_member_id").Value())
+	/* ======== UserData ======== */
+
 	resp := SignResp(ctx.GetString("ep"), loginBody, config.SessionKey)
 
 	ctx.Header("Content-Type", "application/json")

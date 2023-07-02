@@ -6,6 +6,7 @@ import (
 	"elichika/model"
 	"elichika/utils"
 	"encoding/json"
+	"fmt"
 	"net/http"
 	"strconv"
 	"strings"
@@ -26,6 +27,12 @@ func SaveDeckAll(ctx *gin.Context) {
 	err := decoder.Decode(&req)
 	CheckErr(err)
 	// fmt.Println("Raw:", req.SquadDict)
+
+	liveDeckInfo := GetUserData("liveDeck.json")
+	keyDeckName := fmt.Sprintf("user_live_deck_by_id.%d.name.dot_under_text", req.DeckID*2-1)
+	// fmt.Println(keyDeckName)
+	deckName := gjson.Parse(liveDeckInfo).Get(keyDeckName).String()
+	// fmt.Println("deckName:", deckName)
 
 	if req.CardWithSuit[1] == 0 {
 		req.CardWithSuit[1] = req.CardWithSuit[0]
@@ -58,7 +65,7 @@ func SaveDeckAll(ctx *gin.Context) {
 	deckInfo := model.DeckInfo{
 		UserLiveDeckID: req.DeckID,
 		Name: model.DeckName{
-			DotUnderText: "队伍名称变了?",
+			DotUnderText: deckName,
 		},
 		CardMasterID1: req.CardWithSuit[0],
 		CardMasterID2: req.CardWithSuit[2],
@@ -80,6 +87,9 @@ func SaveDeckAll(ctx *gin.Context) {
 		SuitMasterID9: req.CardWithSuit[17],
 	}
 	// fmt.Println(deckInfo)
+
+	keyLiveDeck := fmt.Sprintf("user_live_deck_by_id.%d", req.DeckID*2-1)
+	SetUserData("liveDeck.json", keyLiveDeck, deckInfo)
 
 	deckInfoRes := []model.AsResp{}
 	deckInfoRes = append(deckInfoRes, req.DeckID)
@@ -171,12 +181,16 @@ func SaveDeckAll(ctx *gin.Context) {
 			}
 			// fmt.Println(partyInfo)
 
+			keyLiveParty := fmt.Sprintf("user_live_party_by_id.%d", (req.DeckID-1)*6+(k+1))
+			SetUserData("liveDeck.json", keyLiveParty, partyInfo)
+			// fmt.Println(keyLiveParty, partyName)
+
 			partyInfoRes = append(partyInfoRes, partyId)
 			partyInfoRes = append(partyInfoRes, partyInfo)
 		}
 	}
 
-	respBody := utils.ReadAllText("assets/saveDeckAll.json")
+	respBody := GetUserData("saveDeckAll.json")
 	respBody, _ = sjson.Set(respBody, "user_model.user_status", GetUserStatus())
 	respBody, _ = sjson.Set(respBody, "user_model.user_live_deck_by_id", deckInfoRes)
 	respBody, _ = sjson.Set(respBody, "user_model.user_live_party_by_id", partyInfoRes)
@@ -201,7 +215,7 @@ func FetchLiveMusicSelect(ctx *gin.Context) {
 		liveDailyList[k].RemainingRecoveryCount = 9
 	}
 
-	signBody := utils.ReadAllText("assets/fetchLiveMusicSelect.json")
+	signBody := GetUserData("fetchLiveMusicSelect.json")
 	signBody, _ = sjson.Set(signBody, "weekday_state.weekday", weekday)
 	signBody, _ = sjson.Set(signBody, "weekday_state.next_weekday_at", tomorrow)
 	signBody, _ = sjson.Set(signBody, "live_daily_list", liveDailyList)
@@ -213,7 +227,7 @@ func FetchLiveMusicSelect(ctx *gin.Context) {
 }
 
 func FetchLivePartners(ctx *gin.Context) {
-	signBody := utils.ReadAllText("assets/fetchLivePartners.json")
+	signBody := GetUserData("fetchLivePartners.json")
 	resp := SignResp(ctx.GetString("ep"), signBody, config.SessionKey)
 
 	ctx.Header("Content-Type", "application/json")
@@ -221,7 +235,7 @@ func FetchLivePartners(ctx *gin.Context) {
 }
 
 func FetchLiveDeckSelect(ctx *gin.Context) {
-	signBody := utils.ReadAllText("assets/fetchLiveDeckSelect.json")
+	signBody := GetUserData("fetchLiveDeckSelect.json")
 	resp := SignResp(ctx.GetString("ep"), signBody, config.SessionKey)
 
 	ctx.Header("Content-Type", "application/json")
@@ -239,7 +253,7 @@ func LiveStart(ctx *gin.Context) {
 	// fmt.Println(liveStartReq)
 
 	var cardInfo string
-	partnerResp := gjson.Parse(utils.ReadAllText("assets/fetchLivePartners.json")).Get("partner_select_state.live_partners")
+	partnerResp := gjson.Parse(GetUserData("fetchLivePartners.json")).Get("partner_select_state.live_partners")
 	partnerResp.ForEach(func(k, v gjson.Result) bool {
 		userId := v.Get("user_id").Int()
 		if userId == int64(liveStartReq.PartnerUserID) {
@@ -287,7 +301,7 @@ func LiveStart(ctx *gin.Context) {
 		partnerInfo = nil
 	}
 
-	liveStartResp := utils.ReadAllText("assets/liveStart.json")
+	liveStartResp := GetUserData("liveStart.json")
 	liveStartResp, _ = sjson.Set(liveStartResp, "live.live_id", liveId)
 	liveStartResp, _ = sjson.Set(liveStartResp, "live.deck_id", liveStartReq.DeckID)
 	liveStartResp, _ = sjson.Set(liveStartResp, "live.live_stage", liveNotesRes)
@@ -351,7 +365,7 @@ func LiveFinish(ctx *gin.Context) {
 			RequestStatus:                       3,
 			IsRequestPending:                    false,
 		}
-		partnerResp := gjson.Parse(utils.ReadAllText("assets/fetchLivePartners.json")).Get("partner_select_state.live_partners")
+		partnerResp := gjson.Parse(GetUserData("fetchLivePartners.json")).Get("partner_select_state.live_partners")
 		partnerResp.ForEach(func(k, v gjson.Result) bool {
 			userId := v.Get("user_id").Int()
 			if userId == int64(liveStartReq.PartnerUserID) {
@@ -374,7 +388,7 @@ func LiveFinish(ctx *gin.Context) {
 		RemainingStamina: liveFinishReq.Get("live_score.remaining_stamina").Int(),
 	}
 
-	liveFinishResp := utils.ReadAllText("assets/liveFinish.json")
+	liveFinishResp := GetUserData("liveFinish.json")
 	liveFinishResp, _ = sjson.Set(liveFinishResp, "live_result.live_difficulty_master_id", liveStartReq.LiveDifficultyID)
 	liveFinishResp, _ = sjson.Set(liveFinishResp, "live_result.live_deck_id", liveStartReq.DeckID)
 	liveFinishResp, _ = sjson.Set(liveFinishResp, "live_result.mvp", mvpInfo)
@@ -395,7 +409,7 @@ func LiveFinish(ctx *gin.Context) {
 }
 
 func LiveMvStart(ctx *gin.Context) {
-	signBody, _ := sjson.Set(utils.ReadAllText("assets/liveMvStart.json"),
+	signBody, _ := sjson.Set(GetUserData("liveMvStart.json"),
 		"user_model_diff.user_status", GetUserStatus())
 	resp := SignResp(ctx.GetString("ep"), signBody, config.SessionKey)
 
@@ -523,7 +537,7 @@ func LiveMvSaveDeck(ctx *gin.Context) {
 	}
 	// fmt.Println(userMemberByMemberID)
 
-	signBody := utils.ReadAllText("assets/liveMvSaveDeck.json")
+	signBody := GetUserData("liveMvSaveDeck.json")
 	signBody, _ = sjson.Set(signBody, "user_model.user_status", GetUserStatus())
 	signBody, _ = sjson.Set(signBody, "user_model.user_member_by_member_id", userMemberByMemberID)
 	signBody, _ = sjson.Set(signBody, "user_model.user_live_mv_deck_custom_by_id", userLiveMvDeckCustomByID)

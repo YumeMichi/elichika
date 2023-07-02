@@ -2,7 +2,6 @@ package handler
 
 import (
 	"elichika/config"
-	"elichika/utils"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -11,7 +10,7 @@ import (
 )
 
 func FetchEmblem(ctx *gin.Context) {
-	signBody, _ := sjson.Set(utils.ReadAllText("assets/fetchEmblem.json"),
+	signBody, _ := sjson.Set(GetUserData("fetchEmblem.json"),
 		"user_model.user_status", GetUserStatus())
 	resp := SignResp(ctx.GetString("ep"), signBody, config.SessionKey)
 
@@ -26,12 +25,15 @@ func ActivateEmblem(ctx *gin.Context) {
 	gjson.Parse(reqBody).ForEach(func(key, value gjson.Result) bool {
 		if value.Get("emblem_master_id").String() != "" {
 			emblemId = value.Get("emblem_master_id").Int()
+
+			SetUserData("userStatus.json", "emblem_id", emblemId)
+
 			return false
 		}
 		return true
 	})
 
-	signBody := utils.ReadAllText("assets/activateEmblem.json")
+	signBody := GetUserData("activateEmblem.json")
 	signBody, _ = sjson.Set(signBody, "user_model.user_status", GetUserStatus())
 	signBody, _ = sjson.Set(signBody, "user_model.user_status", GetUserStatus())
 	signBody, _ = sjson.Set(signBody, "user_model.user_status.emblem_id", emblemId)
