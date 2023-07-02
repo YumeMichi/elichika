@@ -1,6 +1,7 @@
 package handler
 
 import (
+	"bytes"
 	"elichika/config"
 	"elichika/database"
 	"elichika/model"
@@ -108,9 +109,10 @@ func SaveDeckAll(ctx *gin.Context) {
 			CheckErr(err)
 
 			dictInfo := model.DeckSquadDict{}
-			if err = json.Unmarshal(rDictInfo, &dictInfo); err != nil {
-				panic(err)
-			}
+			decoder := json.NewDecoder(bytes.NewReader(rDictInfo))
+			decoder.UseNumber()
+			err = decoder.Decode(&dictInfo)
+			CheckErr(err)
 			// fmt.Println("Party Info:", dictInfo)
 
 			roleIds := []int{}
@@ -181,9 +183,13 @@ func SaveDeckAll(ctx *gin.Context) {
 			}
 			// fmt.Println(partyInfo)
 
-			keyLiveParty := fmt.Sprintf("user_live_party_by_id.%d", (req.DeckID-1)*6+(k+1))
-			SetUserData("liveDeck.json", keyLiveParty, partyInfo)
-			// fmt.Println(keyLiveParty, partyName)
+			gjson.Parse(liveDeckInfo).Get("user_live_party_by_id").ForEach(func(key, value gjson.Result) bool {
+				if value.IsObject() && value.Get("party_id").Int() == partyId {
+					SetUserData("liveDeck.json", "user_live_party_by_id."+key.String(), partyInfo)
+					return false
+				}
+				return true
+			})
 
 			partyInfoRes = append(partyInfoRes, partyId)
 			partyInfoRes = append(partyInfoRes, partyInfo)
