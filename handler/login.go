@@ -6,7 +6,9 @@ import (
 	"elichika/utils"
 	"encoding/base64"
 	"encoding/hex"
+	"encoding/json"
 	"net/http"
+	"strings"
 
 	"github.com/gin-gonic/gin"
 	"github.com/tidwall/gjson"
@@ -93,7 +95,14 @@ func Login(ctx *gin.Context) {
 	/* ======== UserData ======== */
 	liveDeckData := gjson.Parse(GetUserData("liveDeck.json"))
 	loginBody, _ = sjson.Set(loginBody, "user_model.user_live_deck_by_id", liveDeckData.Get("user_live_deck_by_id").Value())
-	loginBody, _ = sjson.Set(loginBody, "user_model.user_live_party_by_id", liveDeckData.Get("user_live_party_by_id").Value())
+
+	var liveParty []any
+	decoder := json.NewDecoder(strings.NewReader(liveDeckData.Get("user_live_party_by_id").String()))
+	decoder.UseNumber()
+	err = decoder.Decode(&liveParty)
+	CheckErr(err)
+	// fmt.Println(liveParty)
+	loginBody, _ = sjson.Set(loginBody, "user_model.user_live_party_by_id", liveParty)
 
 	memberData := gjson.Parse(GetUserData("memberSettings.json"))
 	loginBody, _ = sjson.Set(loginBody, "user_model.user_member_by_member_id", memberData.Get("user_member_by_member_id").Value())
