@@ -33,6 +33,9 @@ func FetchCommunicationMemberDetail(ctx *gin.Context) {
 	year, month, day := now.Year(), now.Month(), now.Day()
 	tomorrow := time.Date(year, month, day+1, 0, 0, 0, 0, now.Location()).Unix()
 	weekday := int(now.Weekday())
+	if weekday == 0 {
+		weekday = 7
+	}
 
 	signBody := GetUserData("fetchCommunicationMemberDetail.json")
 	signBody, _ = sjson.Set(signBody, "member_love_panels.0.member_id", memberId)

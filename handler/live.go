@@ -205,6 +205,9 @@ func FetchLiveMusicSelect(ctx *gin.Context) {
 	year, month, day := now.Year(), now.Month(), now.Day()
 	tomorrow := time.Date(year, month, day+1, 0, 0, 0, 0, now.Location()).Unix()
 	weekday := int(now.Weekday())
+	if weekday == 0 {
+		weekday = 7
+	}
 
 	liveDailyList := []model.LiveDaily{}
 	err := MainEng.Table("m_live_daily").Where("weekday = ?", weekday).Cols("id,live_id").Find(&liveDailyList)
