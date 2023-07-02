@@ -5,6 +5,11 @@ package utils
 
 import (
 	"os"
+	"sync"
+)
+
+var (
+	rwMutex sync.RWMutex
 )
 
 func PathExists(path string) bool {
@@ -13,7 +18,9 @@ func PathExists(path string) bool {
 }
 
 func ReadAllText(path string) string {
+	rwMutex.RLock()
 	b, err := os.ReadFile(path)
+	rwMutex.RUnlock()
 	if err != nil {
 		return ""
 	}
@@ -21,7 +28,9 @@ func ReadAllText(path string) string {
 }
 
 func WriteAllText(path, text string) {
+	rwMutex.Lock()
 	_ = os.WriteFile(path, []byte(text), 0644)
+	rwMutex.Unlock()
 }
 
 func Xor(s1, s2 []byte) (res []byte) {
