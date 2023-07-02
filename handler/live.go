@@ -551,3 +551,39 @@ func LiveMvSaveDeck(ctx *gin.Context) {
 	ctx.Header("Content-Type", "application/json")
 	ctx.String(http.StatusOK, resp)
 }
+
+func SaveSuit(ctx *gin.Context) {
+	reqBody := ctx.GetString("reqBody")
+	// fmt.Println(reqBody)
+
+	req := gjson.Parse(reqBody).Array()[0]
+	deckId := req.Get("deck_id").Int()
+	cardId := req.Get("card_index").Int()
+	suitId := req.Get("suit_master_id").Int()
+
+	deckIndex := deckId*2 - 1
+	keyLiveDeck := fmt.Sprintf("user_live_deck_by_id.%d", deckIndex)
+	// fmt.Println("keyLiveDeck:", keyLiveDeck)
+	liveDeck := gjson.Parse(GetUserData("liveDeck.json")).Get(keyLiveDeck).String()
+	// fmt.Println(liveDeck)
+	keyLiveDeckInfo := fmt.Sprintf("suit_master_id_%d", cardId)
+	liveDeck, _ = sjson.Set(liveDeck, keyLiveDeckInfo, suitId)
+	// fmt.Println(liveDeck)
+
+	var deckInfo model.DeckInfo
+	if err := json.Unmarshal([]byte(liveDeck), &deckInfo); err != nil {
+		panic(err)
+	}
+
+	SetUserData("liveDeck.json", keyLiveDeck, deckInfo)
+
+	signBody, _ := sjson.Set(GetUserData("saveSuit.json"),
+		"user_model.user_status", GetUserStatus())
+	signBody, _ = sjson.Set(signBody, "user_model.user_live_deck_by_id.0", deckId)
+	signBody, _ = sjson.Set(signBody, "user_model.user_live_deck_by_id.1", deckInfo)
+	resp := SignResp(ctx.GetString("ep"), signBody, config.SessionKey)
+	// fmt.Println(resp)
+
+	ctx.Header("Content-Type", "application/json")
+	ctx.String(http.StatusOK, resp)
+}

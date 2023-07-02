@@ -28,6 +28,7 @@ func Router(r *gin.Engine) {
 		api.POST("/gameSettings/updatePushNotificationSettings", handler.UpdatePushNotificationSettings)
 		api.POST("/liveDeck/fetchLiveDeckSelect", handler.FetchLiveDeckSelect)
 		api.POST("/liveDeck/saveDeckAll", handler.SaveDeckAll)
+		api.POST("/liveDeck/saveSuit", handler.SaveSuit)
 		api.POST("/live/fetchLiveMusicSelect", handler.FetchLiveMusicSelect)
 		api.POST("/live/finish", handler.LiveFinish)
 		api.POST("/liveMv/saveDeck", handler.LiveMvSaveDeck)
