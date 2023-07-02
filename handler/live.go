@@ -276,9 +276,15 @@ func LiveStart(ctx *gin.Context) {
 		panic(err)
 	}
 
-	var partnerInfo map[string]any
-	if err = json.Unmarshal([]byte(cardInfo), &partnerInfo); err != nil {
-		panic(err)
+	var partnerInfo any
+	if cardInfo != "" {
+		var info map[string]any
+		if err = json.Unmarshal([]byte(cardInfo), &info); err != nil {
+			panic(err)
+		}
+		partnerInfo = info
+	} else {
+		partnerInfo = nil
 	}
 
 	liveStartResp := utils.ReadAllText("assets/liveStart.json")
@@ -332,29 +338,35 @@ func LiveFinish(ctx *gin.Context) {
 	}
 	// fmt.Println("liveStartReq:", liveStartReq)
 
-	partnerInfo := model.LivePartnerInfo{
-		LastPlayedAt:                        time.Now().Unix(),
-		RecommendCardMasterID:               liveStartReq.PartnerCardMasterID,
-		RecommendCardLevel:                  1,
-		IsRecommendCardImageAwaken:          true,
-		IsRecommendCardAllTrainingActivated: true,
-		IsNew:                               false,
-		FriendApprovedAt:                    nil,
-		RequestStatus:                       3,
-		IsRequestPending:                    false,
-	}
-	partnerResp := gjson.Parse(utils.ReadAllText("assets/fetchLivePartners.json")).Get("partner_select_state.live_partners")
-	partnerResp.ForEach(func(k, v gjson.Result) bool {
-		userId := v.Get("user_id").Int()
-		if userId == int64(liveStartReq.PartnerUserID) {
-			partnerInfo.UserID = int(userId)
-			partnerInfo.Name.DotUnderText = v.Get("name.dot_under_text").String()
-			partnerInfo.Rank = int(v.Get("rank").Int())
-			partnerInfo.EmblemID = int(v.Get("emblem_id").Int())
-			partnerInfo.IntroductionMessage.DotUnderText = v.Get("introduction_message.dot_under_text").String()
+	var partnerInfo any
+	if liveStartReq.PartnerUserID != 0 {
+		info := model.LivePartnerInfo{
+			LastPlayedAt:                        time.Now().Unix(),
+			RecommendCardMasterID:               liveStartReq.PartnerCardMasterID,
+			RecommendCardLevel:                  1,
+			IsRecommendCardImageAwaken:          true,
+			IsRecommendCardAllTrainingActivated: true,
+			IsNew:                               false,
+			FriendApprovedAt:                    nil,
+			RequestStatus:                       3,
+			IsRequestPending:                    false,
 		}
-		return true
-	})
+		partnerResp := gjson.Parse(utils.ReadAllText("assets/fetchLivePartners.json")).Get("partner_select_state.live_partners")
+		partnerResp.ForEach(func(k, v gjson.Result) bool {
+			userId := v.Get("user_id").Int()
+			if userId == int64(liveStartReq.PartnerUserID) {
+				info.UserID = int(userId)
+				info.Name.DotUnderText = v.Get("name.dot_under_text").String()
+				info.Rank = int(v.Get("rank").Int())
+				info.EmblemID = int(v.Get("emblem_id").Int())
+				info.IntroductionMessage.DotUnderText = v.Get("introduction_message.dot_under_text").String()
+			}
+			return true
+		})
+		partnerInfo = info
+	} else {
+		partnerInfo = nil
+	}
 
 	liveResult := model.LiveResultAchievementStatus{
 		ClearCount:       1,
