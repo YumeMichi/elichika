@@ -6,6 +6,7 @@ import (
 	"elichika/utils"
 	"encoding/json"
 	"fmt"
+	"os"
 	"time"
 
 	"github.com/tidwall/sjson"
@@ -21,6 +22,8 @@ var (
 
 func init() {
 	MainEng = config.MainEng
+
+	os.Mkdir(userDataPath, 0755)
 }
 
 func CheckErr(err error) {
