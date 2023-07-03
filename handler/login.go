@@ -106,6 +106,12 @@ func Login(ctx *gin.Context) {
 
 	memberData := gjson.Parse(GetUserData("memberSettings.json"))
 	loginBody, _ = sjson.Set(loginBody, "user_model.user_member_by_member_id", memberData.Get("user_member_by_member_id").Value())
+
+	lessonData := gjson.Parse(GetUserData("lessonDeck.json"))
+	loginBody, _ = sjson.Set(loginBody, "user_model.user_lesson_deck_by_id", lessonData.Get("user_lesson_deck_by_id").Value())
+
+	cardData := gjson.Parse(GetUserData("userCard.json"))
+	loginBody, _ = sjson.Set(loginBody, "user_model.user_card_by_card_id", cardData.Get("user_card_by_card_id").Value())
 	/* ======== UserData ======== */
 
 	resp := SignResp(ctx.GetString("ep"), loginBody, config.SessionKey)
