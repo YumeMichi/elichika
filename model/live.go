@@ -161,3 +161,46 @@ type UserLiveMvDeckInfo struct {
 	SuitMasterID11   any `json:"suit_master_id_11"`
 	SuitMasterID12   any `json:"suit_master_id_12"`
 }
+
+// LiveStageInfo ...
+type LiveStageInfo struct {
+	LiveDifficultyID int                `json:"live_difficulty_id"`
+	LiveNotes        []LiveNotes        `json:"live_notes"`
+	LiveWaveSettings []LiveWaveSettings `json:"live_wave_settings"`
+	NoteGimmicks     []NoteGimmicks     `json:"note_gimmicks"`
+	StageGimmickDict []any              `json:"stage_gimmick_dict"`
+}
+
+// LiveNotes ...
+type LiveNotes struct {
+	ID                  int `json:"id"`
+	CallTime            int `json:"call_time"`
+	NoteType            int `json:"note_type"`
+	NotePosition        int `json:"note_position"`
+	GimmickID           int `json:"gimmick_id"`
+	NoteAction          int `json:"note_action"`
+	WaveID              int `json:"wave_id"`
+	NoteRandomDropColor int `json:"note_random_drop_color"`
+	AutoJudgeType       int `json:"auto_judge_type"`
+}
+
+// LiveWaveSettings ...
+type LiveWaveSettings struct {
+	ID            int `json:"id"`
+	WaveDamage    int `json:"wave_damage"`
+	MissionType   int `json:"mission_type"`
+	Arg1          int `json:"arg_1"`
+	Arg2          int `json:"arg_2"`
+	RewardVoltage int `json:"reward_voltage"`
+}
+
+// NoteGimmicks ...
+type NoteGimmicks struct {
+	UniqID          int `json:"uniq_id"`
+	ID              int `json:"id"`
+	NoteGimmickType int `json:"note_gimmick_type"`
+	Arg1            int `json:"arg_1"`
+	Arg2            int `json:"arg_2"`
+	EffectMID       int `json:"effect_m_id"`
+	IconType        int `json:"icon_type"`
+}

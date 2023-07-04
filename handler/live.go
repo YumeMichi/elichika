@@ -294,9 +294,15 @@ func LiveStart(ctx *gin.Context) {
 		panic("歌曲情报信息不存在！")
 	}
 
-	var liveNotesRes map[string]any
-	if err = json.Unmarshal([]byte(liveNotes), &liveNotesRes); err != nil {
+	var liveNotesRes model.LiveStageInfo
+	if err := json.Unmarshal([]byte(liveNotes), &liveNotesRes); err != nil {
 		panic(err)
+	}
+
+	if liveStartReq.IsAutoPlay {
+		for k := range liveNotesRes.LiveNotes {
+			liveNotesRes.LiveNotes[k].AutoJudgeType = 30
+		}
 	}
 
 	var partnerInfo any
