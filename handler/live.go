@@ -122,51 +122,8 @@ func SaveDeckAll(ctx *gin.Context) {
 			CheckErr(err)
 			// fmt.Println("roleIds:", roleIds)
 
-			var partyIcon int
-			var partyName string
-			// 脑残逻辑部分
-			exists, err := MainEng.Table("m_live_party_name").
-				Where("role_1 = ? AND role_2 = ? AND role_3 = ?", roleIds[0], roleIds[1], roleIds[2]).
-				Cols("name,live_party_icon").Get(&partyName, &partyIcon)
-			CheckErr(err)
-			if !exists {
-				exists, err = MainEng.Table("m_live_party_name").
-					Where("role_1 = ? AND role_2 = ? AND role_3 = ?", roleIds[0], roleIds[2], roleIds[1]).
-					Cols("name,live_party_icon").Get(&partyName, &partyIcon)
-				CheckErr(err)
-				if !exists {
-					exists, err = MainEng.Table("m_live_party_name").
-						Where("role_1 = ? AND role_2 = ? AND role_3 = ?", roleIds[1], roleIds[0], roleIds[2]).
-						Cols("name,live_party_icon").Get(&partyName, &partyIcon)
-					CheckErr(err)
-					if !exists {
-						exists, err = MainEng.Table("m_live_party_name").
-							Where("role_1 = ? AND role_2 = ? AND role_3 = ?", roleIds[1], roleIds[2], roleIds[0]).
-							Cols("name,live_party_icon").Get(&partyName, &partyIcon)
-						CheckErr(err)
-						if !exists {
-							exists, err = MainEng.Table("m_live_party_name").
-								Where("role_1 = ? AND role_2 = ? AND role_3 = ?", roleIds[2], roleIds[0], roleIds[1]).
-								Cols("name,live_party_icon").Get(&partyName, &partyIcon)
-							CheckErr(err)
-							if !exists {
-								exists, err = MainEng.Table("m_live_party_name").
-									Where("role_1 = ? AND role_2 = ? AND role_3 = ?", roleIds[2], roleIds[1], roleIds[0]).
-									Cols("name,live_party_icon").Get(&partyName, &partyIcon)
-								CheckErr(err)
-								if !exists {
-									panic("Fuck you!")
-								}
-							}
-						}
-					}
-				}
-			}
-
-			var realPartyName string
-			_, err = MainEng.Table("m_dictionary").Where("id = ?", strings.ReplaceAll(partyName, "k.", "")).Cols("message").Get(&realPartyName)
-			CheckErr(err)
-
+			partyIcon, partyName := GetPartyInfoByRoleIds(roleIds)
+			realPartyName := GetRealPartyName(partyName)
 			partyInfo := model.PartyInfo{
 				PartyID:        int(partyId),
 				UserLiveDeckID: req.DeckID,
@@ -593,6 +550,96 @@ func SaveSuit(ctx *gin.Context) {
 		"user_model.user_status", GetUserStatus())
 	signBody, _ = sjson.Set(signBody, "user_model.user_live_deck_by_id.0", deckId)
 	signBody, _ = sjson.Set(signBody, "user_model.user_live_deck_by_id.1", deckInfo)
+	resp := SignResp(ctx.GetString("ep"), signBody, config.SessionKey)
+	// fmt.Println(resp)
+
+	ctx.Header("Content-Type", "application/json")
+	ctx.String(http.StatusOK, resp)
+}
+
+func SaveDeck(ctx *gin.Context) {
+	reqBody := ctx.GetString("reqBody")
+	// fmt.Println(reqBody)
+
+	req := gjson.Parse(reqBody).Array()[0]
+	deckId := req.Get("deck_id")
+	// fmt.Println("deckId:", deckId)
+
+	position := req.Get("card_master_ids.0")
+	cardMasterId := req.Get("card_master_ids.1")
+	// fmt.Println("cardMasterId:", cardMasterId)
+
+	var deckInfo, partyInfo string
+	var oldCardMasterId int64
+	var partyId int64
+	var savePartyInfo model.PartyInfo
+	deckList := GetUserData("liveDeck.json")
+	gjson.Parse(deckList).Get("user_live_deck_by_id").ForEach(func(key, value gjson.Result) bool {
+		if value.IsObject() && value.Get("user_live_deck_id").String() == deckId.String() {
+			deckInfo = value.String()
+			// fmt.Println("deckInfo:", deckInfo)
+
+			oldCardMasterId = gjson.Parse(deckInfo).Get("card_master_id_" + position.String()).Int()
+			deckInfo, _ = sjson.Set(deckInfo, "card_master_id_"+position.String(), cardMasterId.Int())
+			deckInfo, _ = sjson.Set(deckInfo, "suit_master_id_"+position.String(), cardMasterId.Int())
+			// fmt.Println("New deckInfo:", deckInfo)
+
+			SetUserData("liveDeck.json", "user_live_deck_by_id."+key.String(), gjson.Parse(deckInfo).Value())
+
+			return false
+		}
+		return true
+	})
+	gjson.Parse(deckList).Get("user_live_party_by_id").ForEach(func(key, value gjson.Result) bool {
+		if value.IsObject() && (value.Get("party_id").String() == deckId.String()+"01" ||
+			value.Get("party_id").String() == deckId.String()+"02" ||
+			value.Get("party_id").String() == deckId.String()+"03") {
+			value.ForEach(func(kk, vv gjson.Result) bool {
+				if vv.Int() == oldCardMasterId {
+					partyInfo = value.String()
+					// fmt.Println("partyInfo:", partyInfo)
+
+					partyInfo, _ = sjson.Set(partyInfo, kk.String(), cardMasterId.Int())
+					// fmt.Println("New partyInfo:", partyInfo)
+
+					newPartyInfo := gjson.Parse(partyInfo)
+					partyId = newPartyInfo.Get("party_id").Int()
+
+					roleIds := []int{}
+					err := MainEng.Table("m_card").
+						Where("id IN (?,?,?)", newPartyInfo.Get("card_master_id_1").Int(),
+							newPartyInfo.Get("card_master_id_2").Int(),
+							newPartyInfo.Get("card_master_id_3").Int()).
+						Cols("role").Find(&roleIds)
+					CheckErr(err)
+					// fmt.Println("roleIds:", roleIds)
+
+					partyIcon, partyName := GetPartyInfoByRoleIds(roleIds)
+					realPartyName := GetRealPartyName(partyName)
+					partyInfo, _ = sjson.Set(partyInfo, "name.dot_under_text", realPartyName)
+					partyInfo, _ = sjson.Set(partyInfo, "icon_master_id", partyIcon)
+					// fmt.Println("New partyInfo 2:", partyInfo)
+
+					decoder := json.NewDecoder(strings.NewReader(partyInfo))
+					decoder.UseNumber()
+					err = decoder.Decode(&savePartyInfo)
+					CheckErr(err)
+					SetUserData("liveDeck.json", "user_live_party_by_id."+key.String(), savePartyInfo)
+
+					return false
+				}
+				return true
+			})
+		}
+		return true
+	})
+
+	signBody := GetUserData("SaveDeck.json")
+	signBody, _ = sjson.Set(signBody, "user_model.user_status", GetUserStatus())
+	signBody, _ = sjson.Set(signBody, "user_model.user_live_deck_by_id.0", deckId.Int())
+	signBody, _ = sjson.Set(signBody, "user_model.user_live_deck_by_id.1", gjson.Parse(deckInfo).Value())
+	signBody, _ = sjson.Set(signBody, "user_model.user_live_party_by_id.0", partyId)
+	signBody, _ = sjson.Set(signBody, "user_model.user_live_party_by_id.1", savePartyInfo)
 	resp := SignResp(ctx.GetString("ep"), signBody, config.SessionKey)
 	// fmt.Println(resp)
 

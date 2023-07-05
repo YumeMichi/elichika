@@ -76,7 +76,7 @@ func ResultLesson(ctx *gin.Context) {
 
 func SkillEditResult(ctx *gin.Context) {
 	reqBody := ctx.GetString("reqBody")
-	fmt.Println(reqBody)
+	// fmt.Println(reqBody)
 
 	req := gjson.Parse(reqBody).Array()[0]
 
@@ -117,13 +117,13 @@ func SkillEditResult(ctx *gin.Context) {
 	signBody, _ = sjson.Set(signBody, "user_model.user_status", GetUserStatus())
 	signBody, _ = sjson.Set(signBody, "user_model.user_card_by_card_id", cardList)
 	resp := SignResp(ctx.GetString("ep"), signBody, config.SessionKey)
-	fmt.Println(resp)
+	// fmt.Println(resp)
 
 	ctx.Header("Content-Type", "application/json")
 	ctx.String(http.StatusOK, resp)
 }
 
-func SaveDeck(ctx *gin.Context) {
+func SaveDeckLesson(ctx *gin.Context) {
 	reqBody := ctx.GetString("reqBody")
 	// fmt.Println(reqBody)
 
@@ -161,7 +161,7 @@ func SaveDeck(ctx *gin.Context) {
 		return true
 	})
 
-	signBody := GetUserData("saveDeck.json")
+	signBody := GetUserData("SaveDeckLesson.json")
 	signBody, _ = sjson.Set(signBody, "user_model.user_status", GetUserStatus())
 	signBody, _ = sjson.Set(signBody, "user_model.user_lesson_deck_by_id.0", deckId)
 	signBody, _ = sjson.Set(signBody, "user_model.user_lesson_deck_by_id.1", gjson.Parse(deckInfo).Value())

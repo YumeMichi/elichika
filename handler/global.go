@@ -7,6 +7,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
+	"strings"
 	"time"
 
 	"github.com/tidwall/sjson"
@@ -74,4 +75,53 @@ func SetUserData(fileName, key string, value any) string {
 	utils.WriteAllText(userDataPath+fileName, userData)
 
 	return userData
+}
+
+func GetPartyInfoByRoleIds(roleIds []int) (partyIcon int, partyName string) {
+	// 脑残逻辑部分
+	exists, err := MainEng.Table("m_live_party_name").
+		Where("role_1 = ? AND role_2 = ? AND role_3 = ?", roleIds[0], roleIds[1], roleIds[2]).
+		Cols("name,live_party_icon").Get(&partyName, &partyIcon)
+	CheckErr(err)
+	if !exists {
+		exists, err = MainEng.Table("m_live_party_name").
+			Where("role_1 = ? AND role_2 = ? AND role_3 = ?", roleIds[0], roleIds[2], roleIds[1]).
+			Cols("name,live_party_icon").Get(&partyName, &partyIcon)
+		CheckErr(err)
+		if !exists {
+			exists, err = MainEng.Table("m_live_party_name").
+				Where("role_1 = ? AND role_2 = ? AND role_3 = ?", roleIds[1], roleIds[0], roleIds[2]).
+				Cols("name,live_party_icon").Get(&partyName, &partyIcon)
+			CheckErr(err)
+			if !exists {
+				exists, err = MainEng.Table("m_live_party_name").
+					Where("role_1 = ? AND role_2 = ? AND role_3 = ?", roleIds[1], roleIds[2], roleIds[0]).
+					Cols("name,live_party_icon").Get(&partyName, &partyIcon)
+				CheckErr(err)
+				if !exists {
+					exists, err = MainEng.Table("m_live_party_name").
+						Where("role_1 = ? AND role_2 = ? AND role_3 = ?", roleIds[2], roleIds[0], roleIds[1]).
+						Cols("name,live_party_icon").Get(&partyName, &partyIcon)
+					CheckErr(err)
+					if !exists {
+						exists, err = MainEng.Table("m_live_party_name").
+							Where("role_1 = ? AND role_2 = ? AND role_3 = ?", roleIds[2], roleIds[1], roleIds[0]).
+							Cols("name,live_party_icon").Get(&partyName, &partyIcon)
+						CheckErr(err)
+						if !exists {
+							panic("Fuck you!")
+						}
+					}
+				}
+			}
+		}
+	}
+	return
+}
+
+func GetRealPartyName(partyName string) (realPartyName string) {
+	_, err := MainEng.Table("m_dictionary").Where("id = ?", strings.ReplaceAll(partyName, "k.", "")).
+		Cols("message").Get(&realPartyName)
+	CheckErr(err)
+	return
 }

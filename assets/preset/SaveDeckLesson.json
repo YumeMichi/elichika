@@ -23,8 +23,8 @@
             "activity_point_reset_at": 1688094000,
             "activity_point_payment_recovery_daily_count": 0,
             "activity_point_payment_recovery_daily_reset_at": 0,
-            "game_money": 132906615,
-            "card_exp": 166602130,
+            "game_money": 132715110,
+            "card_exp": 166602125,
             "free_sns_coin": 14955,
             "apple_sns_coin": 0,
             "google_sns_coin": 0,
@@ -60,50 +60,8 @@
         "user_member_by_member_id": [],
         "user_card_by_card_id": [],
         "user_suit_by_suit_id": [],
-        "user_live_deck_by_id": [
-            11,
-            {
-                "user_live_deck_id": 11,
-                "name": {
-                    "dot_under_text": "0-1988"
-                },
-                "card_master_id_1": 102121001,
-                "card_master_id_2": 502031001,
-                "card_master_id_3": 101071001,
-                "card_master_id_4": 302082002,
-                "card_master_id_5": 401082010,
-                "card_master_id_6": 102041001,
-                "card_master_id_7": 101041001,
-                "card_master_id_8": 401012003,
-                "card_master_id_9": 101081001,
-                "suit_master_id_1": 102121001,
-                "suit_master_id_2": 102031001,
-                "suit_master_id_3": 101071001,
-                "suit_master_id_4": 102081001,
-                "suit_master_id_5": 101081001,
-                "suit_master_id_6": 102041001,
-                "suit_master_id_7": 101041001,
-                "suit_master_id_8": 101011001,
-                "suit_master_id_9": 101081001
-            }
-        ],
-        "user_live_party_by_id": [
-            1102,
-            {
-                "party_id": 1102,
-                "user_live_deck_id": 11,
-                "name": {
-                    "dot_under_text": "特技発動率増★2"
-                },
-                "icon_master_id": 43,
-                "card_master_id_1": 302082002,
-                "card_master_id_2": 401082010,
-                "card_master_id_3": 102121001,
-                "user_accessory_id_1": null,
-                "user_accessory_id_2": null,
-                "user_accessory_id_3": null
-            }
-        ],
+        "user_live_deck_by_id": [],
+        "user_live_party_by_id": [],
         "user_lesson_deck_by_id": [],
         "user_live_mv_deck_by_id": [],
         "user_live_mv_deck_custom_by_id": [],
