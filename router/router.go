@@ -9,6 +9,7 @@ import (
 
 func Router(r *gin.Engine) {
 	r.Static("/ep3110/static", "static")
+	r.Static("/static", "static")
 	api := r.Group("ep3110").Use(middleware.Common)
 	{
 		api.POST("/asset/getPackUrl", handler.GetPackUrl)
