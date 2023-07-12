@@ -1,3 +1,3 @@
 # elichika
 
-Love Live! All Stars Local Server
+Local Server for Love Live! All Stars JP / International

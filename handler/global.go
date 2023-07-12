@@ -34,7 +34,7 @@ func CheckErr(err error) {
 }
 
 func SignResp(ep, body, key string) (resp string) {
-	signBody := fmt.Sprintf("%d,\"%s\",0,%s", time.Now().UnixMilli(), config.MasterVersion, body)
+	signBody := fmt.Sprintf("%d,\"%s\",0,%s", time.Now().UnixMilli(), config.Conf.Settings.MasterVersion, body)
 	sign := encrypt.HMAC_SHA1_Encrypt([]byte(ep+" "+signBody), []byte(key))
 	// fmt.Println(sign)
 

@@ -1,6 +1,7 @@
 package middleware
 
 import (
+	"elichika/config"
 	"io"
 	"strings"
 
@@ -15,7 +16,7 @@ func Common(ctx *gin.Context) {
 	defer ctx.Request.Body.Close()
 	ctx.Set("reqBody", string(body))
 
-	ep := strings.ReplaceAll(ctx.Request.URL.String(), "/ep3120", "")
+	ep := strings.ReplaceAll(ctx.Request.URL.String(), "/"+config.Conf.Settings.EndPoint, "")
 	ctx.Set("ep", ep)
 
 	ctx.Next()

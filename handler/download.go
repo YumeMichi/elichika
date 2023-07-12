@@ -27,7 +27,7 @@ func GetPackUrl(ctx *gin.Context) {
 
 	var packUrls []string
 	for _, pack := range packNames {
-		packUrls = append(packUrls, config.CdnServer+"/"+config.MasterVersion+"/"+pack)
+		packUrls = append(packUrls, config.Conf.Settings.CdnServer+"/"+config.Conf.Settings.MasterVersion+"/"+pack)
 	}
 
 	packBody, _ := sjson.Set("{}", "url_list", packUrls)

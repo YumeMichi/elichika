@@ -1,6 +1,7 @@
 package router
 
 import (
+	"elichika/config"
 	"elichika/handler"
 	"elichika/middleware"
 
@@ -8,9 +9,9 @@ import (
 )
 
 func Router(r *gin.Engine) {
-	r.Static("/ep3120/static", "static")
+	r.Static("/"+config.Conf.Settings.EndPoint+"/static", "static")
 	r.Static("/static", "static")
-	api := r.Group("ep3120").Use(middleware.Common)
+	api := r.Group(config.Conf.Settings.EndPoint).Use(middleware.Common)
 	{
 		api.POST("/asset/getPackUrl", handler.GetPackUrl)
 		api.POST("/bootstrap/fetchBootstrap", handler.FetchBootstrap)
