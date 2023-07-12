@@ -8,9 +8,9 @@ import (
 )
 
 func Router(r *gin.Engine) {
-	r.Static("/ep3110/static", "static")
+	r.Static("/ep3120/static", "static")
 	r.Static("/static", "static")
-	api := r.Group("ep3110").Use(middleware.Common)
+	api := r.Group("ep3120").Use(middleware.Common)
 	{
 		api.POST("/asset/getPackUrl", handler.GetPackUrl)
 		api.POST("/bootstrap/fetchBootstrap", handler.FetchBootstrap)

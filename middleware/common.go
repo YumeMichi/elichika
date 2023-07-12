@@ -15,7 +15,7 @@ func Common(ctx *gin.Context) {
 	defer ctx.Request.Body.Close()
 	ctx.Set("reqBody", string(body))
 
-	ep := strings.ReplaceAll(ctx.Request.URL.String(), "/ep3110", "")
+	ep := strings.ReplaceAll(ctx.Request.URL.String(), "/ep3120", "")
 	ctx.Set("ep", ep)
 
 	ctx.Next()

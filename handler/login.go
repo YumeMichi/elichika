@@ -77,14 +77,14 @@ func Login(ctx *gin.Context) {
 		panic(err)
 	}
 
-	unknownKey, err := hex.DecodeString(config.UnknownKey)
+	jaKey, err := hex.DecodeString(config.JaKey)
 	if err != nil {
 		panic(err)
 	}
 
 	newKey := utils.Xor(randomBytes, []byte(config.SessionKey))
 	newKey = utils.Xor(newKey, serverEventReceiverKey)
-	newKey = utils.Xor(newKey, unknownKey)
+	newKey = utils.Xor(newKey, jaKey)
 	newKey64 := base64.StdEncoding.EncodeToString(newKey)
 	// fmt.Println("Session Key:", newKey64)
 
