@@ -16,7 +16,6 @@ type AppConfigs struct {
 type Settings struct {
 	MasterVersion string `json:"master_version"`
 	StartUpKey    string `json:"startup_key"`
-	EndPoint      string `json:"end_point"`
 	CdnServer     string `json:"cdn_server"`
 }
 
@@ -30,7 +29,6 @@ func DefaultConfigs() *AppConfigs {
 		Settings: Settings{
 			MasterVersion: "b66ec2295e9a00aa",
 			StartUpKey:    "5f7IZY1QrAX0D49g",
-			EndPoint:      "ep3120",
 			CdnServer:     "http://192.168.1.123/static",
 		},
 	}
