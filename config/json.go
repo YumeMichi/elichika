@@ -14,6 +14,7 @@ type AppConfigs struct {
 }
 
 type Settings struct {
+	IsGlobal      bool   `json:"is_global"`
 	MasterVersion string `json:"master_version"`
 	StartUpKey    string `json:"startup_key"`
 	CdnServer     string `json:"cdn_server"`
@@ -27,6 +28,7 @@ func DefaultConfigs() *AppConfigs {
 	return &AppConfigs{
 		AppName: "elichika",
 		Settings: Settings{
+			IsGlobal:      false,
 			MasterVersion: "b66ec2295e9a00aa",
 			StartUpKey:    "5f7IZY1QrAX0D49g",
 			CdnServer:     "http://192.168.1.123/static",

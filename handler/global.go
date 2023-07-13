@@ -48,6 +48,9 @@ func GetUserStatus() map[string]any {
 	if err := json.Unmarshal([]byte(userData), &r); err != nil {
 		panic(err)
 	}
+	if config.Conf.Settings.IsGlobal {
+		r["gdpr_version"] = 4
+	}
 	return r
 }
 
