@@ -43,7 +43,7 @@ func StartUp(ctx *gin.Context) {
 
 	startupBody := GetUserData("startup.json")
 	startupBody, _ = sjson.Set(startupBody, "authorization_key", newKey64)
-	resp := SignResp(ctx.GetString("ep"), startupBody, config.Conf.Settings.StartUpKey)
+	resp := SignResp(ctx.GetString("ep"), startupBody, StartUpKey)
 	// fmt.Println("Response:", resp)
 
 	ctx.Header("Content-Type", "application/json")

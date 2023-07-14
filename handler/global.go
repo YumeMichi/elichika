@@ -15,6 +15,10 @@ import (
 )
 
 var (
+	IsGlobal      = false
+	MasterVersion = "b66ec2295e9a00aa"
+	StartUpKey    = "5f7IZY1QrAX0D49g"
+
 	MainEng *xorm.Engine
 
 	presetDataPath = "assets/preset/"
@@ -34,7 +38,7 @@ func CheckErr(err error) {
 }
 
 func SignResp(ep, body, key string) (resp string) {
-	signBody := fmt.Sprintf("%d,\"%s\",0,%s", time.Now().UnixMilli(), config.Conf.Settings.MasterVersion, body)
+	signBody := fmt.Sprintf("%d,\"%s\",0,%s", time.Now().UnixMilli(), MasterVersion, body)
 	sign := encrypt.HMAC_SHA1_Encrypt([]byte(ep+" "+signBody), []byte(key))
 	// fmt.Println(sign)
 
@@ -48,7 +52,7 @@ func GetUserStatus() map[string]any {
 	if err := json.Unmarshal([]byte(userData), &r); err != nil {
 		panic(err)
 	}
-	if config.Conf.Settings.IsGlobal {
+	if IsGlobal {
 		r["gdpr_version"] = 4
 	}
 	return r
