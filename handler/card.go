@@ -29,9 +29,9 @@ func ChangeIsAwakeningImage(ctx *gin.Context) {
 		panic(err)
 	}
 
-	loginData := GetUserData("login.json")
+	loginData := GetUserData("userCard.json")
 	cardInfo := model.CardInfo{}
-	gjson.Parse(loginData).Get("user_model.user_card_by_card_id").
+	gjson.Parse(loginData).Get("user_card_by_card_id").
 		ForEach(func(key, value gjson.Result) bool {
 			if value.IsObject() {
 				if err := json.Unmarshal([]byte(value.String()), &cardInfo); err != nil {
@@ -41,8 +41,8 @@ func ChangeIsAwakeningImage(ctx *gin.Context) {
 				if cardInfo.CardMasterID == req.CardMasterID {
 					cardInfo.IsAwakeningImage = req.IsAwakeningImage
 
-					k := "user_model.user_card_by_card_id." + key.String() + ".is_awakening_image"
-					SetUserData("login.json", k, req.IsAwakeningImage)
+					k := "user_card_by_card_id." + key.String() + ".is_awakening_image"
+					SetUserData("userCard.json", k, req.IsAwakeningImage)
 
 					return false
 				}
