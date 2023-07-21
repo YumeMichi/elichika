@@ -35,7 +35,6 @@ func ActivateEmblem(ctx *gin.Context) {
 
 	signBody := GetUserData("activateEmblem.json")
 	signBody, _ = sjson.Set(signBody, "user_model.user_status", GetUserStatus())
-	signBody, _ = sjson.Set(signBody, "user_model.user_status", GetUserStatus())
 	signBody, _ = sjson.Set(signBody, "user_model.user_status.emblem_id", emblemId)
 	resp := SignResp(ctx.GetString("ep"), signBody, config.SessionKey)
 
