@@ -57,6 +57,7 @@ func Router(r *gin.Engine) {
 		api.POST("/storyEventHistory/finishStory", handler.FinishStory)
 		api.POST("/story/finishStoryLinkage", handler.FinishStoryLinkage)
 		api.POST("/story/finishUserStoryMain", handler.FinishStoryMain)
+		api.POST("/subscription/fetchSubscriptionPass", handler.FetchSubscriptionPass)
 		api.POST("/terms/agreement", handler.Agreement)
 		api.POST("/trainingTree/fetchTrainingTree", handler.FetchTrainingTree)
 		api.POST("/userProfile/fetchProfile", handler.FetchProfile)

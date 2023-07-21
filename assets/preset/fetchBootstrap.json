@@ -109,7 +109,21 @@
         "user_tower_by_tower_id": [],
         "user_recovery_tower_card_used_count_item_by_recovery_tower_card_used_count_item_master_id": [],
         "user_story_linkage_by_id": [],
-        "user_subscription_status_by_id": [],
+        "user_subscription_status_by_id": [
+            13001,
+            {
+                "subscription_master_id": 13001,
+                "start_date": 1629494048,
+                "expire_date": 1893427200,
+                "platform_expire_date": 1893427200,
+                "renewal_count": 35,
+                "continue_count": 35,
+                "subscription_pass_id": 981837235997,
+                "attach_id": "791000478PP021220528180221000001",
+                "is_auto_renew": false,
+                "is_done_trial": true
+            }
+        ],
         "user_story_main_part_digest_movie_by_id": [],
         "user_member_guild_by_id": [],
         "user_member_guild_support_item_by_id": [],
