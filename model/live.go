@@ -204,3 +204,34 @@ type NoteGimmicks struct {
 	EffectMID       int `json:"effect_m_id"`
 	IconType        int `json:"icon_type"`
 }
+
+// PartnerCardReq ...
+type PartnerCardReq struct {
+	LivePartnerCategoryID int `json:"live_partner_category_id"`
+	CardMasterID          int `json:"card_master_id"`
+}
+
+// PartnerCard ...
+type PartnerCard struct {
+	CardMasterID              int                `json:"card_master_id"`
+	Level                     int                `json:"level"`
+	Grade                     int                `json:"grade"`
+	LoveLevel                 int                `json:"love_level"`
+	IsAwakening               bool               `json:"is_awakening"`
+	IsAwakeningImage          bool               `json:"is_awakening_image"`
+	IsAllTrainingActivated    bool               `json:"is_all_training_activated"`
+	ActiveSkillLevel          int                `json:"active_skill_level"`
+	PassiveSkillLevels        []int              `json:"passive_skill_levels"`
+	AdditionalPassiveSkillIds []int              `json:"additional_passive_skill_ids"`
+	MaxFreePassiveSkill       int                `json:"max_free_passive_skill"`
+	TrainingStamina           int                `json:"training_stamina"`
+	TrainingAppeal            int                `json:"training_appeal"`
+	TrainingTechnique         int                `json:"training_technique"`
+	MemberLovePanels          []MemberLovePanels `json:"member_love_panels"`
+}
+
+// MemberLovePanels ...
+type MemberLovePanels struct {
+	MemberID               int   `json:"member_id"`
+	MemberLovePanelCellIds []int `json:"member_love_panel_cell_ids"`
+}

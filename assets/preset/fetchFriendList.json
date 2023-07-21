@@ -1,0 +1,9 @@
+{
+    "success_type": 1,
+    "friend_view_list": {
+        "friend_list": [],
+        "friend_approval_pending_list": [],
+        "friend_application_list": [],
+        "recomend_player_list": []
+    }
+}

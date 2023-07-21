@@ -620,3 +620,78 @@ func SaveDeck(ctx *gin.Context) {
 	ctx.Header("Content-Type", "application/json")
 	ctx.String(http.StatusOK, resp)
 }
+
+func SetLivePartner(ctx *gin.Context) {
+	reqBody := gjson.Parse(ctx.GetString("reqBody")).Array()[0]
+	// fmt.Println(reqBody)
+
+	var req model.PartnerCardReq
+	if err := json.Unmarshal([]byte(reqBody.String()), &req); err != nil {
+		panic(err)
+	}
+
+	var cardInfo model.CardInfo
+	gjson.Parse(GetUserData("userCard.json")).Get("user_card_by_card_id").ForEach(func(key, value gjson.Result) bool {
+		if value.IsObject() {
+			if value.Get("card_master_id").Int() == int64(req.CardMasterID) {
+				if err := json.Unmarshal([]byte(value.String()), &cardInfo); err != nil {
+					panic(err)
+				}
+				return false
+			}
+		}
+		return true
+	})
+
+	var memberId int64
+	_, err := MainEng.Table("m_card").Where("id = ?", req.CardMasterID).Cols("member_m_id").Get(&memberId)
+	CheckErr(err)
+
+	var lovePanels string
+	gjson.Parse(GetUserData("memberSettings.json")).Get("member_love_panels").ForEach(func(key, value gjson.Result) bool {
+		if value.Get("member_id").Int() == memberId {
+			lovePanels = value.String()
+			return false
+		}
+		return true
+	})
+
+	var lovePanelsInfo model.MemberLovePanels
+	if err := json.Unmarshal([]byte(lovePanels), &lovePanelsInfo); err != nil {
+		panic(err)
+	}
+
+	newCardInfo := model.PartnerCard{
+		CardMasterID:           cardInfo.CardMasterID,
+		Level:                  cardInfo.Level,
+		Grade:                  cardInfo.Grade,
+		LoveLevel:              500,
+		IsAwakening:            cardInfo.IsAwakening,
+		IsAwakeningImage:       cardInfo.IsAwakeningImage,
+		IsAllTrainingActivated: cardInfo.IsAllTrainingActivated,
+		ActiveSkillLevel:       cardInfo.ActiveSkillLevel,
+		PassiveSkillLevels: []int{
+			cardInfo.PassiveSkillALevel,
+			cardInfo.PassiveSkillBLevel,
+		},
+		AdditionalPassiveSkillIds: []int{
+			cardInfo.AdditionalPassiveSkill1ID,
+			cardInfo.AdditionalPassiveSkill2ID,
+			cardInfo.AdditionalPassiveSkill3ID,
+			cardInfo.AdditionalPassiveSkill4ID,
+		},
+		MaxFreePassiveSkill: cardInfo.MaxFreePassiveSkill,
+		TrainingStamina:     cardInfo.TrainingLife,
+		TrainingAppeal:      cardInfo.TrainingAttack,
+		TrainingTechnique:   cardInfo.TrainingDexterity,
+	}
+	newCardInfo.MemberLovePanels = append(newCardInfo.MemberLovePanels, lovePanelsInfo)
+
+	key := fmt.Sprintf("guest_info.live_partner_cards.%d.partner_card", req.LivePartnerCategoryID-1)
+	SetUserData("fetchProfile.json", key, newCardInfo)
+
+	resp := SignResp(ctx.GetString("ep"), "{}", config.SessionKey)
+
+	ctx.Header("Content-Type", "application/json")
+	ctx.String(http.StatusOK, resp)
+}
