@@ -41,7 +41,7 @@ func StartUp(ctx *gin.Context) {
 	newKey64 := base64.StdEncoding.EncodeToString(newKey)
 	// fmt.Println("Session Key:", newKey64)
 
-	startupBody := GetUserData("startup.json")
+	startupBody := GetData("startup.json")
 	startupBody, _ = sjson.Set(startupBody, "authorization_key", newKey64)
 	resp := SignResp(ctx.GetString("ep"), startupBody, StartUpKey)
 	// fmt.Println("Response:", resp)
@@ -88,7 +88,7 @@ func Login(ctx *gin.Context) {
 	newKey64 := base64.StdEncoding.EncodeToString(newKey)
 	// fmt.Println("Session Key:", newKey64)
 
-	loginBody := GetUserData("login.json")
+	loginBody := GetData("login.json")
 	loginBody, _ = sjson.Set(loginBody, "session_key", newKey64)
 	loginBody, _ = sjson.Set(loginBody, "user_model.user_status", GetUserStatus())
 

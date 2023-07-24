@@ -8,7 +8,7 @@ import (
 )
 
 func FetchStill(ctx *gin.Context) {
-	signBody := GetUserData("fetchStill.json")
+	signBody := GetData("fetchStill.json")
 	resp := SignResp(ctx.GetString("ep"), signBody, config.SessionKey)
 	// fmt.Println(resp)
 

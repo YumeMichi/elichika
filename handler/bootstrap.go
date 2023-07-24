@@ -9,7 +9,7 @@ import (
 )
 
 func FetchBootstrap(ctx *gin.Context) {
-	signBody, _ := sjson.Set(GetUserData("fetchBootstrap.json"),
+	signBody, _ := sjson.Set(GetData("fetchBootstrap.json"),
 		"user_model_diff.user_status", GetUserStatus())
 	resp := SignResp(ctx.GetString("ep"), signBody, config.SessionKey)
 
@@ -18,7 +18,7 @@ func FetchBootstrap(ctx *gin.Context) {
 }
 
 func GetClearedPlatformAchievement(ctx *gin.Context) {
-	signBody := GetUserData("getClearedPlatformAchievement.json")
+	signBody := GetData("getClearedPlatformAchievement.json")
 	resp := SignResp(ctx.GetString("ep"), signBody, config.SessionKey)
 
 	ctx.Header("Content-Type", "application/json")

@@ -10,7 +10,7 @@ import (
 )
 
 func FetchEmblem(ctx *gin.Context) {
-	signBody, _ := sjson.Set(GetUserData("fetchEmblem.json"),
+	signBody, _ := sjson.Set(GetData("fetchEmblem.json"),
 		"user_model.user_status", GetUserStatus())
 	resp := SignResp(ctx.GetString("ep"), signBody, config.SessionKey)
 
@@ -33,7 +33,7 @@ func ActivateEmblem(ctx *gin.Context) {
 		return true
 	})
 
-	signBody := GetUserData("activateEmblem.json")
+	signBody := GetData("activateEmblem.json")
 	signBody, _ = sjson.Set(signBody, "user_model.user_status", GetUserStatus())
 	signBody, _ = sjson.Set(signBody, "user_model.user_status.emblem_id", emblemId)
 	resp := SignResp(ctx.GetString("ep"), signBody, config.SessionKey)

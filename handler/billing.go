@@ -8,7 +8,7 @@ import (
 )
 
 func FetchBillingHistory(ctx *gin.Context) {
-	signBody := GetUserData("fetchBillingHistory.json")
+	signBody := GetData("fetchBillingHistory.json")
 	resp := SignResp(ctx.GetString("ep"), signBody, config.SessionKey)
 	// fmt.Println(resp)
 

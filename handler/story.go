@@ -9,7 +9,7 @@ import (
 )
 
 func FinishStory(ctx *gin.Context) {
-	signBody, _ := sjson.Set(GetUserData("finishStory.json"),
+	signBody, _ := sjson.Set(GetData("finishStory.json"),
 		"user_model.user_status", GetUserStatus())
 	resp := SignResp(ctx.GetString("ep"), signBody, config.SessionKey)
 
@@ -18,7 +18,7 @@ func FinishStory(ctx *gin.Context) {
 }
 
 func FinishStoryMain(ctx *gin.Context) {
-	signBody, _ := sjson.Set(GetUserData("finishUserStoryMain.json"),
+	signBody, _ := sjson.Set(GetData("finishUserStoryMain.json"),
 		"user_model_diff.user_status", GetUserStatus())
 	resp := SignResp(ctx.GetString("ep"), signBody, config.SessionKey)
 
@@ -27,7 +27,7 @@ func FinishStoryMain(ctx *gin.Context) {
 }
 
 func FinishStoryLinkage(ctx *gin.Context) {
-	signBody, _ := sjson.Set(GetUserData("finishStoryLinkage.json"),
+	signBody, _ := sjson.Set(GetData("finishStoryLinkage.json"),
 		"user_model_diff.user_status", GetUserStatus())
 	resp := SignResp(ctx.GetString("ep"), signBody, config.SessionKey)
 

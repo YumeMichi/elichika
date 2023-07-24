@@ -9,7 +9,7 @@ import (
 )
 
 func SaveUserNaviVoice(ctx *gin.Context) {
-	signBody, _ := sjson.Set(GetUserData("saveUserNaviVoice.json"),
+	signBody, _ := sjson.Set(GetData("saveUserNaviVoice.json"),
 		"user_model.user_status", GetUserStatus())
 	resp := SignResp(ctx.GetString("ep"), signBody, config.SessionKey)
 

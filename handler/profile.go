@@ -45,7 +45,7 @@ func SetProfile(ctx *gin.Context) {
 			gjson.Parse(reqBody).Array()[0].Get("message").String())
 	}
 
-	signBody, _ := sjson.Set(GetUserData("setProfile.json"),
+	signBody, _ := sjson.Set(GetData("setProfile.json"),
 		"user_model.user_status", GetUserStatus())
 	resp := SignResp(ctx.GetString("ep"), signBody, config.SessionKey)
 
@@ -75,7 +75,7 @@ func SetRecommendCard(ctx *gin.Context) {
 	SetUserData("fetchProfile.json", "profile_info.basic_info.recommend_card_master_id", cardMasterId)
 	SetUserData("fetchProfile.json", "profile_info.basic_info.is_recommend_card_image_awaken", cardInfo.IsAwakeningImage)
 
-	signBody, _ := sjson.Set(GetUserData("setRecommendCard.json"),
+	signBody, _ := sjson.Set(GetData("setRecommendCard.json"),
 		"user_model.user_status", GetUserStatus())
 	resp := SignResp(ctx.GetString("ep"), signBody, config.SessionKey)
 

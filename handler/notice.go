@@ -8,7 +8,7 @@ import (
 )
 
 func FetchNotice(ctx *gin.Context) {
-	signBody := GetUserData("fetchNotice.json")
+	signBody := GetData("fetchNotice.json")
 	resp := SignResp(ctx.GetString("ep"), signBody, config.SessionKey)
 
 	ctx.Header("Content-Type", "application/json")

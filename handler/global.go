@@ -58,6 +58,15 @@ func GetUserStatus() map[string]any {
 	return r
 }
 
+func GetData(fileName string) string {
+	presetDataFile := presetDataPath + fileName
+	if !utils.PathExists(presetDataFile) {
+		panic("File not exists")
+	}
+
+	return utils.ReadAllText(presetDataFile)
+}
+
 func GetUserData(fileName string) string {
 	userDataFile := userDataPath + fileName
 	if utils.PathExists(userDataFile) {

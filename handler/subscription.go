@@ -8,7 +8,7 @@ import (
 )
 
 func FetchSubscriptionPass(ctx *gin.Context) {
-	signBody := GetUserData("fetchSubscriptionPass.json")
+	signBody := GetData("fetchSubscriptionPass.json")
 	resp := SignResp(ctx.GetString("ep"), signBody, config.SessionKey)
 	// fmt.Println(resp)
 

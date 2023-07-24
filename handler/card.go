@@ -12,7 +12,7 @@ import (
 )
 
 func UpdateCardNewFlag(ctx *gin.Context) {
-	signBody, _ := sjson.Set(GetUserData("updateCardNewFlag.json"),
+	signBody, _ := sjson.Set(GetData("updateCardNewFlag.json"),
 		"user_model_diff.user_status", GetUserStatus())
 	resp := SignResp(ctx.GetString("ep"), signBody, config.SessionKey)
 
@@ -60,7 +60,7 @@ func ChangeIsAwakeningImage(ctx *gin.Context) {
 		SetUserData("fetchProfile.json", "profile_info.basic_info.is_recommend_card_image_awaken", req.IsAwakeningImage)
 	}
 
-	cardResp := GetUserData("changeIsAwakeningImage.json")
+	cardResp := GetData("changeIsAwakeningImage.json")
 	cardResp, _ = sjson.Set(cardResp, "user_model_diff.user_status", GetUserStatus())
 	cardResp, _ = sjson.Set(cardResp, "user_model_diff.user_card_by_card_id", userCardInfo)
 	resp := SignResp(ctx.GetString("ep"), cardResp, config.SessionKey)
@@ -103,7 +103,7 @@ func ChangeFavorite(ctx *gin.Context) {
 	userCardInfo = append(userCardInfo, cardInfo.CardMasterID)
 	userCardInfo = append(userCardInfo, cardInfo)
 
-	cardResp := GetUserData("changeFavorite.json")
+	cardResp := GetData("changeFavorite.json")
 	cardResp, _ = sjson.Set(cardResp, "user_model_diff.user_status", GetUserStatus())
 	cardResp, _ = sjson.Set(cardResp, "user_model_diff.user_card_by_card_id", userCardInfo)
 	resp := SignResp(ctx.GetString("ep"), cardResp, config.SessionKey)
@@ -124,7 +124,7 @@ func GetOtherUserCard(ctx *gin.Context) {
 
 	var newUserCardInfo model.NewCardInfo
 	var cardInfo string
-	partnerList := gjson.Parse(GetUserData("fetchLivePartners.json")).Get("partner_select_state.live_partners")
+	partnerList := gjson.Parse(GetData("fetchLivePartners.json")).Get("partner_select_state.live_partners")
 	partnerList.ForEach(func(k, v gjson.Result) bool {
 		userId := v.Get("user_id").Int()
 		if userId == userCardReq.UserID {
@@ -148,7 +148,7 @@ func GetOtherUserCard(ctx *gin.Context) {
 		panic(err)
 	}
 
-	userCardResp := GetUserData("getOtherUserCard.json")
+	userCardResp := GetData("getOtherUserCard.json")
 	userCardResp, _ = sjson.Set(userCardResp, "other_user_card", newUserCardInfo)
 	resp := SignResp(ctx.GetString("ep"), userCardResp, config.SessionKey)
 	// fmt.Println(resp)
@@ -158,7 +158,7 @@ func GetOtherUserCard(ctx *gin.Context) {
 }
 
 func FetchTrainingTree(ctx *gin.Context) {
-	signBody := GetUserData("fetchTrainingTree.json")
+	signBody := GetData("fetchTrainingTree.json")
 	resp := SignResp(ctx.GetString("ep"), signBody, config.SessionKey)
 
 	ctx.Header("Content-Type", "application/json")

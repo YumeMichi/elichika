@@ -8,7 +8,7 @@ import (
 )
 
 func Agreement(ctx *gin.Context) {
-	signBody := GetUserData("agreement.json")
+	signBody := GetData("agreement.json")
 	resp := SignResp(ctx.GetString("ep"), signBody, config.SessionKey)
 
 	ctx.Header("Content-Type", "application/json")

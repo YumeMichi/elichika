@@ -9,7 +9,7 @@ import (
 )
 
 func FetchMission(ctx *gin.Context) {
-	signBody, _ := sjson.Set(GetUserData("fetchMission.json"),
+	signBody, _ := sjson.Set(GetData("fetchMission.json"),
 		"user_model.user_status", GetUserStatus())
 	resp := SignResp(ctx.GetString("ep"), signBody, config.SessionKey)
 
@@ -18,7 +18,7 @@ func FetchMission(ctx *gin.Context) {
 }
 
 func ClearMissionBadge(ctx *gin.Context) {
-	signBody, _ := sjson.Set(GetUserData("clearMissionBadge.json"),
+	signBody, _ := sjson.Set(GetData("clearMissionBadge.json"),
 		"user_model.user_status", GetUserStatus())
 	resp := SignResp(ctx.GetString("ep"), signBody, config.SessionKey)
 

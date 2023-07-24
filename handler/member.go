@@ -37,7 +37,7 @@ func FetchCommunicationMemberDetail(ctx *gin.Context) {
 		weekday = 7
 	}
 
-	signBody := GetUserData("fetchCommunicationMemberDetail.json")
+	signBody := GetData("fetchCommunicationMemberDetail.json")
 	signBody, _ = sjson.Set(signBody, "member_love_panels.0.member_id", memberId)
 	signBody, _ = sjson.Set(signBody, "member_love_panels.0.member_love_panel_cell_ids", lovePanelCellIds)
 	signBody, _ = sjson.Set(signBody, "weekday_state.weekday", weekday)
@@ -65,7 +65,7 @@ func UpdateUserCommunicationMemberDetailBadge(ctx *gin.Context) {
 		MemberMasterID: int(memberMasterId),
 	})
 
-	signBody := GetUserData("updateUserCommunicationMemberDetailBadge.json")
+	signBody := GetData("updateUserCommunicationMemberDetailBadge.json")
 	signBody, _ = sjson.Set(signBody, "user_model.user_status", GetUserStatus())
 	signBody, _ = sjson.Set(signBody, "user_model.user_communication_member_detail_badge_by_id", userDetail)
 	resp := SignResp(ctx.GetString("ep"), signBody, config.SessionKey)
@@ -75,7 +75,7 @@ func UpdateUserCommunicationMemberDetailBadge(ctx *gin.Context) {
 }
 
 func UpdateUserLiveDifficultyNewFlag(ctx *gin.Context) {
-	signBody, _ := sjson.Set(GetUserData("updateUserLiveDifficultyNewFlag.json"),
+	signBody, _ := sjson.Set(GetData("updateUserLiveDifficultyNewFlag.json"),
 		"user_model.user_status", GetUserStatus())
 	resp := SignResp(ctx.GetString("ep"), signBody, config.SessionKey)
 
@@ -84,7 +84,7 @@ func UpdateUserLiveDifficultyNewFlag(ctx *gin.Context) {
 }
 
 func FinishUserStorySide(ctx *gin.Context) {
-	signBody, _ := sjson.Set(GetUserData("finishUserStorySide.json"),
+	signBody, _ := sjson.Set(GetData("finishUserStorySide.json"),
 		"user_model.user_status", GetUserStatus())
 	resp := SignResp(ctx.GetString("ep"), signBody, config.SessionKey)
 
@@ -93,7 +93,7 @@ func FinishUserStorySide(ctx *gin.Context) {
 }
 
 func FinishUserStoryMember(ctx *gin.Context) {
-	signBody, _ := sjson.Set(GetUserData("finishUserStoryMember.json"),
+	signBody, _ := sjson.Set(GetData("finishUserStoryMember.json"),
 		"user_model.user_status", GetUserStatus())
 	resp := SignResp(ctx.GetString("ep"), signBody, config.SessionKey)
 
@@ -150,7 +150,7 @@ func SetTheme(ctx *gin.Context) {
 		IsNew:        false,
 	})
 
-	signBody := GetUserData("setTheme.json")
+	signBody := GetData("setTheme.json")
 	signBody, _ = sjson.Set(signBody, "user_model.user_status", GetUserStatus())
 	signBody, _ = sjson.Set(signBody, "user_model.user_member_by_member_id", userMemberRes)
 	signBody, _ = sjson.Set(signBody, "user_model.user_suit_by_suit_id", userSuitRes)
@@ -165,7 +165,7 @@ func SetFavoriteMember(ctx *gin.Context) {
 
 	SetUserData("userStatus.json", "favorite_member_id",
 		gjson.Parse(reqBody).Array()[0].Get("member_master_id").Int())
-	signBody, _ := sjson.Set(GetUserData("setFavoriteMember.json"),
+	signBody, _ := sjson.Set(GetData("setFavoriteMember.json"),
 		"user_model.user_status", GetUserStatus())
 	resp := SignResp(ctx.GetString("ep"), signBody, config.SessionKey)
 

@@ -8,7 +8,7 @@ import (
 )
 
 func Sif2DataLink(ctx *gin.Context) {
-	signBody := GetUserData("sif2DataLink.json")
+	signBody := GetData("sif2DataLink.json")
 	resp := SignResp(ctx.GetString("ep"), signBody, config.SessionKey)
 	// fmt.Println(resp)
 

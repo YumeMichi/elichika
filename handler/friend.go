@@ -8,7 +8,7 @@ import (
 )
 
 func FetchFriendList(ctx *gin.Context) {
-	signBody := GetUserData("fetchFriendList.json")
+	signBody := GetData("fetchFriendList.json")
 	resp := SignResp(ctx.GetString("ep"), signBody, config.SessionKey)
 	// fmt.Println(resp)
 
