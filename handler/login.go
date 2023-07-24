@@ -93,7 +93,8 @@ func Login(ctx *gin.Context) {
 	loginBody, _ = sjson.Set(loginBody, "user_model.user_status", GetUserStatus())
 
 	/* ======== UserData ======== */
-	liveDeckData := gjson.Parse(GetUserData("liveDeck.json"))
+	// live decks
+	liveDeckData := gjson.Parse(GetLiveDeckData())
 	loginBody, _ = sjson.Set(loginBody, "user_model.user_live_deck_by_id", liveDeckData.Get("user_live_deck_by_id").Value())
 
 	var liveParty []any
@@ -101,17 +102,28 @@ func Login(ctx *gin.Context) {
 	decoder.UseNumber()
 	err = decoder.Decode(&liveParty)
 	CheckErr(err)
-	// fmt.Println(liveParty)
 	loginBody, _ = sjson.Set(loginBody, "user_model.user_live_party_by_id", liveParty)
 
+	// member settings
 	memberData := gjson.Parse(GetUserData("memberSettings.json"))
 	loginBody, _ = sjson.Set(loginBody, "user_model.user_member_by_member_id", memberData.Get("user_member_by_member_id").Value())
 
+	// lesson decks
 	lessonData := gjson.Parse(GetUserData("lessonDeck.json"))
 	loginBody, _ = sjson.Set(loginBody, "user_model.user_lesson_deck_by_id", lessonData.Get("user_lesson_deck_by_id").Value())
 
+	// user cards
 	cardData := gjson.Parse(GetUserData("userCard.json"))
 	loginBody, _ = sjson.Set(loginBody, "user_model.user_card_by_card_id", cardData.Get("user_card_by_card_id").Value())
+
+	// user accessory
+	var UserAccessory []any
+	decoder = json.NewDecoder(strings.NewReader(
+		gjson.Parse(GetUserAccessoryData()).Get("user_accessory_by_user_accessory_id").String()))
+	decoder.UseNumber()
+	err = decoder.Decode(&UserAccessory)
+	CheckErr(err)
+	loginBody, _ = sjson.Set(loginBody, "user_model.user_accessory_by_user_accessory_id", UserAccessory)
 	/* ======== UserData ======== */
 
 	resp := SignResp(ctx.GetString("ep"), loginBody, config.SessionKey)
