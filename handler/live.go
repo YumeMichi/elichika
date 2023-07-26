@@ -36,31 +36,31 @@ func SaveDeckAll(ctx *gin.Context) {
 	// fmt.Println("deckName:", deckName)
 
 	if req.CardWithSuit[1] == 0 {
-		req.CardWithSuit[1] = req.CardWithSuit[0]
+		req.CardWithSuit[1] = GetMemberDefaultSuit(req.CardWithSuit[0])
 	}
 	if req.CardWithSuit[3] == 0 {
-		req.CardWithSuit[3] = req.CardWithSuit[2]
+		req.CardWithSuit[3] = GetMemberDefaultSuit(req.CardWithSuit[2])
 	}
 	if req.CardWithSuit[5] == 0 {
-		req.CardWithSuit[5] = req.CardWithSuit[4]
+		req.CardWithSuit[5] = GetMemberDefaultSuit(req.CardWithSuit[4])
 	}
 	if req.CardWithSuit[7] == 0 {
-		req.CardWithSuit[7] = req.CardWithSuit[6]
+		req.CardWithSuit[7] = GetMemberDefaultSuit(req.CardWithSuit[6])
 	}
 	if req.CardWithSuit[9] == 0 {
-		req.CardWithSuit[9] = req.CardWithSuit[8]
+		req.CardWithSuit[9] = GetMemberDefaultSuit(req.CardWithSuit[8])
 	}
 	if req.CardWithSuit[11] == 0 {
-		req.CardWithSuit[11] = req.CardWithSuit[10]
+		req.CardWithSuit[11] = GetMemberDefaultSuit(req.CardWithSuit[10])
 	}
 	if req.CardWithSuit[13] == 0 {
-		req.CardWithSuit[13] = req.CardWithSuit[12]
+		req.CardWithSuit[13] = GetMemberDefaultSuit(req.CardWithSuit[12])
 	}
 	if req.CardWithSuit[15] == 0 {
-		req.CardWithSuit[15] = req.CardWithSuit[14]
+		req.CardWithSuit[15] = GetMemberDefaultSuit(req.CardWithSuit[14])
 	}
 	if req.CardWithSuit[17] == 0 {
-		req.CardWithSuit[17] = req.CardWithSuit[16]
+		req.CardWithSuit[17] = GetMemberDefaultSuit(req.CardWithSuit[16])
 	}
 
 	deckInfo := model.DeckInfo{

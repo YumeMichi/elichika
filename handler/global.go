@@ -7,6 +7,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
+	"strconv"
 	"strings"
 	"time"
 
@@ -161,4 +162,16 @@ func GetRealPartyName(partyName string) (realPartyName string) {
 		Cols("message").Get(&realPartyName)
 	CheckErr(err)
 	return
+}
+
+func GetMemberDefaultSuit(cardMasterId int) int {
+	var memberMasterId int
+	_, err := MainEng.Table("m_card").Where("id = ?", cardMasterId).
+		Cols("member_m_id").Get(&memberMasterId)
+	CheckErr(err)
+
+	suitMasterId, err := strconv.Atoi(fmt.Sprintf("10%03d1001", memberMasterId))
+	CheckErr(err)
+
+	return suitMasterId
 }
