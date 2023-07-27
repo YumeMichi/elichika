@@ -3,6 +3,7 @@ package handler
 import (
 	"elichika/config"
 	"elichika/encrypt"
+	"elichika/model"
 	"elichika/utils"
 	"encoding/json"
 	"fmt"
@@ -11,6 +12,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/tidwall/gjson"
 	"github.com/tidwall/sjson"
 	"xorm.io/xorm"
 )
@@ -164,14 +166,34 @@ func GetRealPartyName(partyName string) (realPartyName string) {
 	return
 }
 
-func GetMemberDefaultSuit(cardMasterId int) int {
-	var memberMasterId int
+func GetMemberMasterIdByCardMasterId(cardMasterId int) (memberMasterId int) {
 	_, err := MainEng.Table("m_card").Where("id = ?", cardMasterId).
 		Cols("member_m_id").Get(&memberMasterId)
 	CheckErr(err)
+	return
+}
 
-	suitMasterId, err := strconv.Atoi(fmt.Sprintf("10%03d1001", memberMasterId))
+func GetMemberDefaultSuitByCardMasterId(cardMasterId int) int {
+	suitMasterId, err := strconv.Atoi(fmt.Sprintf("10%03d1001", GetMemberMasterIdByCardMasterId(cardMasterId)))
 	CheckErr(err)
 
 	return suitMasterId
+}
+
+func GetMemberInfoByCardMasterId(cardMasterId int) (memberInfo model.UserMemberInfo) {
+	key := fmt.Sprintf("user_member_by_member_id.#(member_master_id==%d)", GetMemberMasterIdByCardMasterId(cardMasterId))
+	memberData := GetUserData("memberSettings.json")
+	if err := json.Unmarshal([]byte(gjson.Parse(memberData).Get(key).String()), &memberInfo); err != nil {
+		panic(err)
+	}
+	return
+}
+
+func GetMemberInfo(memberMasterId int) (memberInfo model.UserMemberInfo) {
+	key := fmt.Sprintf("user_member_by_member_id.#(member_master_id==%d)", memberMasterId)
+	memberData := GetUserData("memberSettings.json")
+	if err := json.Unmarshal([]byte(gjson.Parse(memberData).Get(key).String()), &memberInfo); err != nil {
+		panic(err)
+	}
+	return
 }

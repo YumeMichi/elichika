@@ -36,31 +36,31 @@ func SaveDeckAll(ctx *gin.Context) {
 	// fmt.Println("deckName:", deckName)
 
 	if req.CardWithSuit[1] == 0 {
-		req.CardWithSuit[1] = GetMemberDefaultSuit(req.CardWithSuit[0])
+		req.CardWithSuit[1] = GetMemberDefaultSuitByCardMasterId(req.CardWithSuit[0])
 	}
 	if req.CardWithSuit[3] == 0 {
-		req.CardWithSuit[3] = GetMemberDefaultSuit(req.CardWithSuit[2])
+		req.CardWithSuit[3] = GetMemberDefaultSuitByCardMasterId(req.CardWithSuit[2])
 	}
 	if req.CardWithSuit[5] == 0 {
-		req.CardWithSuit[5] = GetMemberDefaultSuit(req.CardWithSuit[4])
+		req.CardWithSuit[5] = GetMemberDefaultSuitByCardMasterId(req.CardWithSuit[4])
 	}
 	if req.CardWithSuit[7] == 0 {
-		req.CardWithSuit[7] = GetMemberDefaultSuit(req.CardWithSuit[6])
+		req.CardWithSuit[7] = GetMemberDefaultSuitByCardMasterId(req.CardWithSuit[6])
 	}
 	if req.CardWithSuit[9] == 0 {
-		req.CardWithSuit[9] = GetMemberDefaultSuit(req.CardWithSuit[8])
+		req.CardWithSuit[9] = GetMemberDefaultSuitByCardMasterId(req.CardWithSuit[8])
 	}
 	if req.CardWithSuit[11] == 0 {
-		req.CardWithSuit[11] = GetMemberDefaultSuit(req.CardWithSuit[10])
+		req.CardWithSuit[11] = GetMemberDefaultSuitByCardMasterId(req.CardWithSuit[10])
 	}
 	if req.CardWithSuit[13] == 0 {
-		req.CardWithSuit[13] = GetMemberDefaultSuit(req.CardWithSuit[12])
+		req.CardWithSuit[13] = GetMemberDefaultSuitByCardMasterId(req.CardWithSuit[12])
 	}
 	if req.CardWithSuit[15] == 0 {
-		req.CardWithSuit[15] = GetMemberDefaultSuit(req.CardWithSuit[14])
+		req.CardWithSuit[15] = GetMemberDefaultSuitByCardMasterId(req.CardWithSuit[14])
 	}
 	if req.CardWithSuit[17] == 0 {
-		req.CardWithSuit[17] = GetMemberDefaultSuit(req.CardWithSuit[16])
+		req.CardWithSuit[17] = GetMemberDefaultSuitByCardMasterId(req.CardWithSuit[16])
 	}
 
 	deckInfo := model.DeckInfo{
@@ -407,6 +407,7 @@ func LiveMvSaveDeck(ctx *gin.Context) {
 		LiveMasterID: saveReq.LiveMasterID,
 	}
 
+	memberInfoList := map[int]model.UserMemberInfo{}
 	memberIds := map[int]int{}
 	for k, v := range saveReq.MemberMasterIDByPos {
 		if k%2 == 0 {
@@ -439,9 +440,12 @@ func LiveMvSaveDeck(ctx *gin.Context) {
 			case 12:
 				userLiveMvDeckInfo.MemberMasterID12 = memberId
 			}
+
+			memberInfoList[v] = GetMemberInfo(memberId)
 		}
 	}
 	// fmt.Println(memberIds)
+	// fmt.Println(memberInfoList)
 
 	suitIds := map[int]int{}
 	for k, v := range saveReq.SuitMasterIDByPos {
@@ -479,6 +483,19 @@ func LiveMvSaveDeck(ctx *gin.Context) {
 	}
 	// fmt.Println(suitIds)
 
+	var newMemberInfoList []any
+	for k, v := range saveReq.ViewStatusByPos {
+		if k%2 == 0 {
+			memberInfo := memberInfoList[v]
+			memberInfo.ViewStatus = saveReq.ViewStatusByPos[k+1]
+
+			newMemberInfoList = append(newMemberInfoList, memberInfo.MemberMasterID)
+			newMemberInfoList = append(newMemberInfoList, memberInfo)
+			// fmt.Printf("k => %d, v => %d, val => %d\n", k, v, saveReq.ViewStatusByPos[k+1])
+		}
+	}
+	// fmt.Println(newMemberInfoList)
+
 	var userLiveMvDeckCustomByID []any
 	userLiveMvDeckCustomByID = append(userLiveMvDeckCustomByID, saveReq.LiveMasterID)
 	userLiveMvDeckCustomByID = append(userLiveMvDeckCustomByID, userLiveMvDeckInfo)
@@ -487,6 +504,7 @@ func LiveMvSaveDeck(ctx *gin.Context) {
 	signBody := GetData("liveMvSaveDeck.json")
 	signBody, _ = sjson.Set(signBody, "user_model.user_status", GetUserStatus())
 	signBody, _ = sjson.Set(signBody, "user_model.user_live_mv_deck_custom_by_id", userLiveMvDeckCustomByID)
+	signBody, _ = sjson.Set(signBody, "user_model.user_member_by_member_id", newMemberInfoList)
 
 	resp := SignResp(ctx.GetString("ep"), string(signBody), config.SessionKey)
 	// fmt.Println(resp)
