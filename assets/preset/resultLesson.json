@@ -140,19 +140,11 @@
         },
         {
             "position": 1,
-            "passive_skill_id": 30000402
+            "passive_skill_id": 30000492
         },
         {
             "position": 1,
-            "passive_skill_id": 30000452
-        },
-        {
-            "position": 1,
-            "passive_skill_id": 30000462
-        },
-        {
-            "position": 1,
-            "passive_skill_id": 30000472
+            "passive_skill_id": 30000502
         },
         {
             "position": 2,
@@ -172,19 +164,11 @@
         },
         {
             "position": 2,
-            "passive_skill_id": 30000402
+            "passive_skill_id": 30000492
         },
         {
             "position": 2,
-            "passive_skill_id": 30000452
-        },
-        {
-            "position": 2,
-            "passive_skill_id": 30000462
-        },
-        {
-            "position": 2,
-            "passive_skill_id": 30000472
+            "passive_skill_id": 30000502
         },
         {
             "position": 3,
@@ -204,19 +188,11 @@
         },
         {
             "position": 3,
-            "passive_skill_id": 30000402
+            "passive_skill_id": 30000492
         },
         {
             "position": 3,
-            "passive_skill_id": 30000452
-        },
-        {
-            "position": 3,
-            "passive_skill_id": 30000462
-        },
-        {
-            "position": 3,
-            "passive_skill_id": 30000472
+            "passive_skill_id": 30000502
         },
         {
             "position": 4,
@@ -236,19 +212,11 @@
         },
         {
             "position": 4,
-            "passive_skill_id": 30000402
+            "passive_skill_id": 30000492
         },
         {
             "position": 4,
-            "passive_skill_id": 30000452
-        },
-        {
-            "position": 4,
-            "passive_skill_id": 30000462
-        },
-        {
-            "position": 4,
-            "passive_skill_id": 30000472
+            "passive_skill_id": 30000502
         },
         {
             "position": 5,
@@ -268,19 +236,11 @@
         },
         {
             "position": 5,
-            "passive_skill_id": 30000402
+            "passive_skill_id": 30000492
         },
         {
             "position": 5,
-            "passive_skill_id": 30000452
-        },
-        {
-            "position": 5,
-            "passive_skill_id": 30000462
-        },
-        {
-            "position": 5,
-            "passive_skill_id": 30000472
+            "passive_skill_id": 30000502
         },
         {
             "position": 6,
@@ -300,19 +260,11 @@
         },
         {
             "position": 6,
-            "passive_skill_id": 30000402
+            "passive_skill_id": 30000492
         },
         {
             "position": 6,
-            "passive_skill_id": 30000452
-        },
-        {
-            "position": 6,
-            "passive_skill_id": 30000462
-        },
-        {
-            "position": 6,
-            "passive_skill_id": 30000472
+            "passive_skill_id": 30000502
         },
         {
             "position": 7,
@@ -332,19 +284,11 @@
         },
         {
             "position": 7,
-            "passive_skill_id": 30000402
+            "passive_skill_id": 30000492
         },
         {
             "position": 7,
-            "passive_skill_id": 30000452
-        },
-        {
-            "position": 7,
-            "passive_skill_id": 30000462
-        },
-        {
-            "position": 7,
-            "passive_skill_id": 30000472
+            "passive_skill_id": 30000502
         },
         {
             "position": 8,
@@ -364,19 +308,11 @@
         },
         {
             "position": 8,
-            "passive_skill_id": 30000402
+            "passive_skill_id": 30000492
         },
         {
             "position": 8,
-            "passive_skill_id": 30000452
-        },
-        {
-            "position": 8,
-            "passive_skill_id": 30000462
-        },
-        {
-            "position": 8,
-            "passive_skill_id": 30000472
+            "passive_skill_id": 30000502
         },
         {
             "position": 9,
@@ -396,19 +332,11 @@
         },
         {
             "position": 9,
-            "passive_skill_id": 30000402
+            "passive_skill_id": 30000492
         },
         {
             "position": 9,
-            "passive_skill_id": 30000452
-        },
-        {
-            "position": 9,
-            "passive_skill_id": 30000462
-        },
-        {
-            "position": 9,
-            "passive_skill_id": 30000472
+            "passive_skill_id": 30000502
         }
     ]
 }
