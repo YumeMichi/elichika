@@ -14,7 +14,8 @@ type AppConfigs struct {
 }
 
 type Settings struct {
-	CdnServer string `json:"cdn_server"`
+	ListenPort string `json:"listen_port"`
+	CdnServer  string `json:"cdn_server"`
 }
 
 type LevelDbConfigs struct {
@@ -25,7 +26,8 @@ func DefaultConfigs() *AppConfigs {
 	return &AppConfigs{
 		AppName: "elichika",
 		Settings: Settings{
-			CdnServer: "http://192.168.1.123/static",
+			ListenPort: "8080",
+			CdnServer:  "http://192.168.1.123/static",
 		},
 	}
 }
@@ -46,7 +48,7 @@ func Load(p string) *AppConfigs {
 }
 
 func (c *AppConfigs) Save(p string) error {
-	data, err := json.Marshal(c)
+	data, err := json.MarshalIndent(c, "", "	")
 	if err != nil {
 		return err
 	}
