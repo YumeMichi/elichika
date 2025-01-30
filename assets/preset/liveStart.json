@@ -2121,7 +2121,7 @@
             ]
         },
         "is_partner_friend": true,
-        "cell_id": 47002,
+        "cell_id": null,
         "tower_live": null
     },
     "user_model_diff": {

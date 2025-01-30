@@ -7,3 +7,5 @@ static
 assets/userdata
 
 config.json
+
+nohup.out
