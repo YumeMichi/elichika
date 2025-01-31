@@ -2,6 +2,7 @@ package handler
 
 import (
 	"elichika/config"
+	"elichika/db"
 	"elichika/model"
 	"net/http"
 	"time"
@@ -23,7 +24,7 @@ func FetchCommunicationMemberDetail(ctx *gin.Context) {
 	})
 
 	lovePanelCellIds := []int{}
-	err := MainEng.Table("m_member_love_panel_cell").
+	err := db.MainEng.Table("m_member_love_panel_cell").
 		Join("LEFT", "m_member_love_panel", "m_member_love_panel_cell.member_love_panel_master_id = m_member_love_panel.id").
 		Cols("m_member_love_panel_cell.id").Where("m_member_love_panel.member_master_id = ?", memberId).
 		OrderBy("m_member_love_panel_cell.id ASC").Find(&lovePanelCellIds)

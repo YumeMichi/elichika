@@ -116,7 +116,7 @@ func SaveDeckAll(ctx *gin.Context) {
 			// fmt.Println("Party Info:", dictInfo)
 
 			roleIds := []int{}
-			err = MainEng.Table("m_card").
+			err = db.MainEng.Table("m_card").
 				Where("id IN (?,?,?)", dictInfo.CardMasterIds[0], dictInfo.CardMasterIds[1], dictInfo.CardMasterIds[2]).
 				Cols("role").Find(&roleIds)
 			CheckErr(err)
@@ -173,7 +173,7 @@ func FetchLiveMusicSelect(ctx *gin.Context) {
 	}
 
 	liveDailyList := []model.LiveDaily{}
-	err := MainEng.Table("m_live_daily").Where("weekday = ?", weekday).Cols("id,live_id").Find(&liveDailyList)
+	err := db.MainEng.Table("m_live_daily").Where("weekday = ?", weekday).Cols("id,live_id").Find(&liveDailyList)
 	CheckErr(err)
 	for k := range liveDailyList {
 		liveDailyList[k].EndAt = int(tomorrow)
@@ -598,7 +598,7 @@ func SaveDeck(ctx *gin.Context) {
 					partyId = newPartyInfo.Get("party_id").Int()
 
 					roleIds := []int{}
-					err := MainEng.Table("m_card").
+					err := db.MainEng.Table("m_card").
 						Where("id IN (?,?,?)", newPartyInfo.Get("card_master_id_1").Int(),
 							newPartyInfo.Get("card_master_id_2").Int(),
 							newPartyInfo.Get("card_master_id_3").Int()).
@@ -662,7 +662,7 @@ func SetLivePartner(ctx *gin.Context) {
 	})
 
 	var memberId int64
-	_, err := MainEng.Table("m_card").Where("id = ?", req.CardMasterID).Cols("member_m_id").Get(&memberId)
+	_, err := db.MainEng.Table("m_card").Where("id = ?", req.CardMasterID).Cols("member_m_id").Get(&memberId)
 	CheckErr(err)
 
 	var lovePanels string

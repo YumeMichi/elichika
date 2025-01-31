@@ -1,6 +1,7 @@
 package handler
 
 import (
+	"elichika/db"
 	"elichika/encrypt"
 	"elichika/model"
 	"elichika/utils"
@@ -13,15 +14,12 @@ import (
 
 	"github.com/tidwall/gjson"
 	"github.com/tidwall/sjson"
-	"xorm.io/xorm"
 )
 
 var (
 	IsGlobal      = false
 	MasterVersion = "b66ec2295e9a00aa"
 	StartUpKey    = "5f7IZY1QrAX0D49g"
-
-	MainEng *xorm.Engine
 
 	presetDataPath = "assets/preset/"
 	userDataPath   = "assets/userdata/"
@@ -116,32 +114,32 @@ func SetLiveDeckData(key string, value any) string {
 
 func GetPartyInfoByRoleIds(roleIds []int) (partyIcon int, partyName string) {
 	// 脑残逻辑部分
-	exists, err := MainEng.Table("m_live_party_name").
+	exists, err := db.MainEng.Table("m_live_party_name").
 		Where("role_1 = ? AND role_2 = ? AND role_3 = ?", roleIds[0], roleIds[1], roleIds[2]).
 		Cols("name,live_party_icon").Get(&partyName, &partyIcon)
 	CheckErr(err)
 	if !exists {
-		exists, err = MainEng.Table("m_live_party_name").
+		exists, err = db.MainEng.Table("m_live_party_name").
 			Where("role_1 = ? AND role_2 = ? AND role_3 = ?", roleIds[0], roleIds[2], roleIds[1]).
 			Cols("name,live_party_icon").Get(&partyName, &partyIcon)
 		CheckErr(err)
 		if !exists {
-			exists, err = MainEng.Table("m_live_party_name").
+			exists, err = db.MainEng.Table("m_live_party_name").
 				Where("role_1 = ? AND role_2 = ? AND role_3 = ?", roleIds[1], roleIds[0], roleIds[2]).
 				Cols("name,live_party_icon").Get(&partyName, &partyIcon)
 			CheckErr(err)
 			if !exists {
-				exists, err = MainEng.Table("m_live_party_name").
+				exists, err = db.MainEng.Table("m_live_party_name").
 					Where("role_1 = ? AND role_2 = ? AND role_3 = ?", roleIds[1], roleIds[2], roleIds[0]).
 					Cols("name,live_party_icon").Get(&partyName, &partyIcon)
 				CheckErr(err)
 				if !exists {
-					exists, err = MainEng.Table("m_live_party_name").
+					exists, err = db.MainEng.Table("m_live_party_name").
 						Where("role_1 = ? AND role_2 = ? AND role_3 = ?", roleIds[2], roleIds[0], roleIds[1]).
 						Cols("name,live_party_icon").Get(&partyName, &partyIcon)
 					CheckErr(err)
 					if !exists {
-						exists, err = MainEng.Table("m_live_party_name").
+						exists, err = db.MainEng.Table("m_live_party_name").
 							Where("role_1 = ? AND role_2 = ? AND role_3 = ?", roleIds[2], roleIds[1], roleIds[0]).
 							Cols("name,live_party_icon").Get(&partyName, &partyIcon)
 						CheckErr(err)
@@ -157,14 +155,14 @@ func GetPartyInfoByRoleIds(roleIds []int) (partyIcon int, partyName string) {
 }
 
 func GetRealPartyName(partyName string) (realPartyName string) {
-	_, err := MainEng.Table("m_dictionary").Where("id = ?", strings.ReplaceAll(partyName, "k.", "")).
+	_, err := db.MainEng.Table("m_dictionary").Where("id = ?", strings.ReplaceAll(partyName, "k.", "")).
 		Cols("message").Get(&realPartyName)
 	CheckErr(err)
 	return
 }
 
 func GetMemberMasterIdByCardMasterId(cardMasterId int) (memberMasterId int) {
-	_, err := MainEng.Table("m_card").Where("id = ?", cardMasterId).
+	_, err := db.MainEng.Table("m_card").Where("id = ?", cardMasterId).
 		Cols("member_m_id").Get(&memberMasterId)
 	CheckErr(err)
 	return

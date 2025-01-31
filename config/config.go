@@ -9,7 +9,6 @@ import (
 	"time"
 
 	_ "modernc.org/sqlite"
-	"xorm.io/xorm"
 )
 
 var (
@@ -20,9 +19,6 @@ var (
 	JaKey                  = "78d53d9e645a0305602174e06b98d81f638eaf4a84db19c756866fddac360c96"
 
 	SessionKey = "12345678123456781234567812345678"
-
-	MainDb  = "assets/main.db"
-	MainEng *xorm.Engine
 
 	Conf = &AppConfigs{}
 )
@@ -50,17 +46,6 @@ type Patcher struct {
 func InitConf() {
 	Conf = Load("./config.json")
 
-	eng, err := xorm.NewEngine("sqlite", MainDb)
-	if err != nil {
-		panic(err)
-	}
-	err = eng.Ping()
-	if err != nil {
-		panic(err)
-	}
-	MainEng = eng
-	MainEng.SetMaxOpenConns(50)
-	MainEng.SetMaxIdleConns(10)
 }
 
 func DefaultConfigs() *AppConfigs {
