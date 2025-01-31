@@ -9,8 +9,9 @@ import (
 )
 
 type AppConfigs struct {
-	AppName  string   `json:"app_name"`
-	Settings Settings `json:"settings"`
+	AppName  string    `json:"app_name"`
+	Settings Settings  `json:"settings"`
+	Patcher  []Patcher `json:"patcher"`
 }
 
 type Settings struct {
@@ -22,12 +23,27 @@ type LevelDbConfigs struct {
 	DataPath string `json:"data_path"`
 }
 
+type Patcher struct {
+	Target      string `json:"target"`
+	Replacement string `json:"replacement"`
+}
+
 func DefaultConfigs() *AppConfigs {
 	return &AppConfigs{
 		AppName: "elichika",
 		Settings: Settings{
 			ListenPort: "8080",
 			CdnServer:  "http://192.168.1.123/static",
+		},
+		Patcher: []Patcher{
+			{
+				Target:      "http://127.0.0.1:8080",
+				Replacement: "http://192.168.1.123",
+			},
+			{
+				Target:      "http://localhost:8080",
+				Replacement: "http://192.168.1.123",
+			},
 		},
 	}
 }

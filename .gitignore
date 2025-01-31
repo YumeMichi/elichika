@@ -9,3 +9,5 @@ assets/userdata
 config.json
 
 nohup.out
+temp
+.vscode
