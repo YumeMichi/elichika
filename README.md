@@ -2,6 +2,7 @@
 
 Local Server for Love Live! All Stars Japanese / Global
 
+## How to use
 Clone this repository.
 ```
 # clone
@@ -25,13 +26,23 @@ Generate config file.
 elichika.exe
 ```
 
-Edit cdn server (Usually local ip:port).
+Edit config.json, change cdn server or something else.
 
-Exit `elichika` and run again.
+Run again.
 
-### Assets
+## Client
+1. Download patched 3.12.0 clients from [arina999999997's fork](https://github.com/arina999999997/elichika/releases/tag/clients).
+2. Change `replacement` values in `config.json` to your server address.
+3. Run elichika with parameter `-apk <file_apk>` to patch apk.
+4. Put `temp/dist.apk` to your device.
 
-Put databases and assets into `static/2d61e7b4e89961c7` (Global) or `static/b66ec2295e9a00aa` (Japanese).
+## Database
+1. Download patched databases from [arina999999997/harasho](https://github.com/arina999999997/harasho/tree/master/db).
+2. Move files in `jp` to `static/b66ec2295e9a00aa` or files in `gl` to `static/2d61e7b4e89961c7`.
+
+## Asset
+
+Download assets and move them to `static/2d61e7b4e89961c7` (Global) or `static/b66ec2295e9a00aa` (Japanese).
 
 You can download assets from [ll-sifas-cdn-data](https://archive.org/download/ll-sifas-cdn-data).
 
@@ -40,6 +51,3 @@ File list:
 | :--------------------------------------- | :---------------- |
 | sifas-jp-cdn-assets-b66ec2295e9a00aa.tar | assets (Japanese) |
 | sifas-gl-cdn-assets-2d61e7b4e89961c7.tar | assets (Global)   |
-
-### Clients
-For [3.12.0 clients](https://mega.nz/folder/gwJizZjS#v_fSOadf9yrb_eaOze2r7Q), you need to download [patched databases](https://mega.nz/folder/gwJizZjS#v_fSOadf9yrb_eaOze2r7Q).

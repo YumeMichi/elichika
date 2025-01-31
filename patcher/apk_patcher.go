@@ -106,6 +106,10 @@ func ApkPatcher() {
 		if err = os.Chdir(appDir); err != nil {
 			panic(err)
 		}
+
+		// 退出程序
+		fmt.Println("Target complete: temp/dist.apk")
+		os.Exit(0)
 	}
 }
 
