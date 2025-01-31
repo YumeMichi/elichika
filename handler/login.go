@@ -34,7 +34,7 @@ func StartUp(ctx *gin.Context) {
 	if err != nil {
 		panic(err)
 	}
-	randomBytes := encrypt.RSA_DecryptOAEP(mask, "privatekey.pem")
+	randomBytes := encrypt.RSA_DecryptOAEP(mask)
 	// fmt.Println("Random Bytes:", randomBytes)
 
 	newKey := utils.Xor(randomBytes, []byte(config.SessionKey))
@@ -69,7 +69,7 @@ func Login(ctx *gin.Context) {
 	if err != nil {
 		panic(err)
 	}
-	randomBytes := encrypt.RSA_DecryptOAEP(mask, "privatekey.pem")
+	randomBytes := encrypt.RSA_DecryptOAEP(mask)
 	// fmt.Println("Random Bytes:", randomBytes)
 
 	serverEventReceiverKey, err := hex.DecodeString(config.ServerEventReceiverKey)

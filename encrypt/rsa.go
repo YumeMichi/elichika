@@ -8,15 +8,9 @@ import (
 	"crypto/x509"
 	"encoding/pem"
 	"os"
-	"path/filepath"
-	"runtime"
 )
 
 func RSA_Gen(bits int) {
-	//get current path
-	_, currentpath, _, _ := runtime.Caller(0)
-	currentpath = filepath.Dir(currentpath)
-
 	//----------------------------------------------private key
 
 	// GenerateKey generates an RSA keypair of the given bit size using the
@@ -34,7 +28,7 @@ func RSA_Gen(bits int) {
 
 	//encode x509 to pem and save to file
 	//1. create privatefile
-	privatekeyfile, err := os.Create(currentpath + "/privatekey.pem")
+	privatekeyfile, err := os.Create("assets/privatekey.pem")
 	if err != nil {
 		panic(err)
 	}
@@ -57,7 +51,7 @@ func RSA_Gen(bits int) {
 
 	//encode x509 to pem and save to file
 	//1. create publickeyfile
-	publickeyfile, err := os.Create(currentpath + "/publickey.pem")
+	publickeyfile, err := os.Create("assets/publickey.pem")
 	if err != nil {
 		panic(err)
 	}
@@ -74,9 +68,9 @@ func RSA_Gen(bits int) {
 	pem.Encode(publickeyfile, &publickeyblock)
 }
 
-func RSA_Encrypt(plainText []byte, publickeypath string) []byte {
+func RSA_Encrypt(plainText []byte) []byte {
 	//open publickeyfile
-	publickeyfile, err := os.Open(publickeypath)
+	publickeyfile, err := os.Open("assets/publickey.pem")
 	if err != nil {
 		panic(err)
 	}
@@ -109,9 +103,9 @@ func RSA_Encrypt(plainText []byte, publickeypath string) []byte {
 	return cipherText
 }
 
-func RSA_Decrypt(cipherText []byte, privatekeypath string) []byte {
+func RSA_Decrypt(cipherText []byte) []byte {
 	//open privatekeyfile
-	privatekeyfile, err := os.Open(privatekeypath)
+	privatekeyfile, err := os.Open("assets/privatekey.pem")
 	if err != nil {
 		panic(err)
 	}
@@ -137,9 +131,9 @@ func RSA_Decrypt(cipherText []byte, privatekeypath string) []byte {
 	return plainText
 }
 
-func RSA_Sign_SHA1(cipherText []byte, privatekeypath string) []byte {
+func RSA_Sign_SHA1(cipherText []byte) []byte {
 	//open privatekeyfile
-	privatekeyfile, err := os.Open(privatekeypath)
+	privatekeyfile, err := os.Open("assets/privatekey.pem")
 	if err != nil {
 		panic(err)
 	}
@@ -172,9 +166,9 @@ func RSA_Sign_SHA1(cipherText []byte, privatekeypath string) []byte {
 	return signature
 }
 
-func RSA_DecryptOAEP(cipherText []byte, privatekeypath string) []byte {
+func RSA_DecryptOAEP(cipherText []byte) []byte {
 	//open privatekeyfile
-	privatekeyfile, err := os.Open(privatekeypath)
+	privatekeyfile, err := os.Open("assets/privatekey.pem")
 	if err != nil {
 		panic(err)
 	}
