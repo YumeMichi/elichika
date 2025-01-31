@@ -1,7 +1,6 @@
 package handler
 
 import (
-	"elichika/config"
 	"elichika/encrypt"
 	"elichika/model"
 	"elichika/utils"
@@ -29,8 +28,6 @@ var (
 )
 
 func init() {
-	MainEng = config.MainEng
-
 	os.Mkdir(userDataPath, 0755)
 }
 

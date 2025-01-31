@@ -3,7 +3,7 @@ package handler
 import (
 	"bytes"
 	"elichika/config"
-	"elichika/database"
+	"elichika/db"
 	"elichika/model"
 	"elichika/utils"
 	"encoding/json"
@@ -242,7 +242,7 @@ func LiveStart(ctx *gin.Context) {
 	// 保存请求包因为 /live/finish 接口的响应包里有部分字段不在该接口的请求包里
 	liveId := time.Now().UnixNano()
 	liveIdStr := strconv.Itoa(int(liveId))
-	err := database.LevelDb.Put([]byte("live_"+liveIdStr), []byte(reqBody.String()))
+	err := db.DB.Set([]byte("live_"+liveIdStr), []byte(reqBody.String()))
 	CheckErr(err)
 
 	liveDifficultyId := strconv.Itoa(liveStartReq.LiveDifficultyID)
@@ -315,7 +315,7 @@ func LiveFinish(ctx *gin.Context) {
 	}
 
 	liveId := liveFinishReq.Get("live_id").String()
-	res, err := database.LevelDb.Get([]byte("live_" + liveId))
+	res, err := db.DB.Get([]byte("live_" + liveId))
 	CheckErr(err)
 
 	liveStartReq := model.LiveStartReq{}

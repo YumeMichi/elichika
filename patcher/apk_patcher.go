@@ -19,8 +19,6 @@ var (
 )
 
 func ApkPatcher() {
-	flag.Parse()
-
 	if *apkFile != "" {
 		// 初始化
 		if err := isCommandAvailable("apktool", "zipalign", "apksigner"); err != nil {
