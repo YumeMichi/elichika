@@ -16,6 +16,9 @@ import (
 )
 
 func main() {
+	// config
+	config.InitConf()
+
 	// patcher
 	flag.Parse()
 	patcher.ApkPatcher()
