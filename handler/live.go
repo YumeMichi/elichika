@@ -503,7 +503,11 @@ func LiveMvSaveDeck(ctx *gin.Context) {
 
 	signBody := GetData("liveMvSaveDeck.json")
 	signBody, _ = sjson.Set(signBody, "user_model.user_status", GetUserStatus())
-	signBody, _ = sjson.Set(signBody, "user_model.user_live_mv_deck_custom_by_id", userLiveMvDeckCustomByID)
+	if saveReq.LiveMvDeckType == 1 {
+		signBody, _ = sjson.Set(signBody, "user_model.user_live_mv_deck_by_id", userLiveMvDeckCustomByID)
+	} else {
+		signBody, _ = sjson.Set(signBody, "user_model.user_live_mv_deck_custom_by_id", userLiveMvDeckCustomByID)
+	}
 	signBody, _ = sjson.Set(signBody, "user_model.user_member_by_member_id", newMemberInfoList)
 
 	resp := SignResp(ctx.GetString("ep"), string(signBody), config.SessionKey)
