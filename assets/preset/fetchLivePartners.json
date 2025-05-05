@@ -197,8 +197,8 @@
                     },
                     7,
                     {
-                        "card_master_id": 101032001,
-                        "level": 80,
+                        "card_master_id": 100092001,
+                        "level": 60,
                         "grade": 5,
                         "love_level": 1,
                         "is_awakening": true,
@@ -210,9 +210,9 @@
                             1
                         ],
                         "additional_passive_skill_ids": [
-                            30000512,
-                            30000512,
-                            30000462,
+                            30000482,
+                            30000482,
+                            30000482,
                             0,
                             0,
                             0,
@@ -221,9 +221,9 @@
                             0
                         ],
                         "max_free_passive_skill": 4,
-                        "training_stamina": 4575,
-                        "training_appeal": 10522,
-                        "training_technique": 7777,
+                        "training_stamina": 6528,
+                        "training_appeal": 4896,
+                        "training_technique": 4896,
                         "member_love_panels": []
                     }
                 ],
